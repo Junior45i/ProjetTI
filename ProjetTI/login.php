@@ -8,7 +8,7 @@ try {
     if (isset($_POST['login'])) {
         $email = $_POST['email'];
         $mdp = $_POST['mdp'];
-        header('Location:profil.php');
+        header('Location: profil.php');
         if (!empty($email)&& !empty($mdp)) {
             $sql = $conn->prepare("SELECT idMem FROM membre 
                             WHERE mail =:email 
