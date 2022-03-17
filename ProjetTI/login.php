@@ -3,14 +3,14 @@ session_start();
 
 include 'config/database.php';
 $conn = connectDB("localhost", "proj_tm_bdd", "root", "");
+
 // Action du formulaire
 try {
     if (isset($_POST['login'])) {
         $email = $_POST['email'];
         $mdp = $_POST['mdp'];
-        header('Location: profil.php');
         if (!empty($email)&& !empty($mdp)) {
-            $sql = $conn->prepare("SELECT idMem FROM membre 
+            $sql = $conn->prepare("SELECT idMem,preMem  FROM membre 
                             WHERE mail =:email 
                             AND mdpMembre =:mdp");
 
@@ -20,7 +20,13 @@ try {
 
             $userTrouve = $sql->rowCount();
 
+            // Redirection quand utilisateur trouvé
             if ($userTrouve) {
+                //Enregistrement d'info à propos de cette utilisateur
+                $user = $sql->fetch(PDO::FETCH_OBJ);
+
+                $_SESSION['user_id'] = $user->idMem;
+                $_SESSION['pseudo'] = $user->preMem;
                 header('Location: profil.php');
             } else {
                 // Faire en sorte que mauvais il ce passe un truc

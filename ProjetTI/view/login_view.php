@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <title>bs4 beta login - Bootdey.com</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <meta charset="utf-8">
+  <title>bs4 beta login - Bootdey.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <link href="https://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../Style/login.css">
+  <link href="../Style/login.css">
   <script src="https://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 </head>
 <body>
-<br>
-<br>
-<div class="container">
+<form method="POST">
+  <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card-group mb-0">
@@ -30,7 +29,7 @@
               </div>
               <div class="row">
                 <div class="col-6">
-                  <button type="button"  id="login" name="login" class="btn btn-primary px-4">Se connecter</button>
+                  <button type="login" id="login" name="login" class="btn btn-primary">Se connecter</button>
                 </div>
                 <div class="col-6 text-right">
                   <button type="button" class="btn btn-link px-0">Mot de passer oublié</button>
@@ -51,3 +50,7 @@
       </div>
     </div>
   </div>
+</form>
+</body>
+
+</html>
