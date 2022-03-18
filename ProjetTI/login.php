@@ -29,7 +29,7 @@ try {
 
                 $_SESSION['user_id'] = $user->idMem;
                 $_SESSION['pseudo'] = $user->preMem;
-                header('Location: profil.php');
+                header('Location: profil.php?id='.$user->idMem);
             } else {
                 // Faire en sorte que mauvais il ce passe un truc
                 echo "Mauvais mdp/pswd";
