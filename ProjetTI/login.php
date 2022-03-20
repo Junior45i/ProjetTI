@@ -36,6 +36,10 @@ try {
             }
         }
     }
+    // if (isset($_POST['new'])) {
+    //     echo "test";
+    //     header('Location: register.php');
+    // }
 } catch (PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
 }
