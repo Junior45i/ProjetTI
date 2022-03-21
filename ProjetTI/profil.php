@@ -1,6 +1,6 @@
 <?php
 session_start();
-//kedis saucisson
+
 // Connection DB
 include 'config/database.php';
 $conn = connectDB("localhost", "proj_tm_bdd", "root", "");
