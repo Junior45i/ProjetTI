@@ -39,22 +39,22 @@
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<h6 class="mb-2 text-primary">Détail personnel</h6>
 							</div>
-							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+							<!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group">
 									<label for="fullName">Nom</label>
 									<input type="text" class="form-control" id="fullName" placeholder="Enter full name">
 								</div>
-							</div>
+							</div> -->
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group">
 									<label for="annee">Année Scolaire</label>
-									<input type="annee" class="form-control" id="annee" placeholder="Année scolaire en cours">
+									<input type="annee" class="form-control" name="section" id="annee" placeholder="Année scolaire en cours">
 								</div>
 							</div>
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group">
 									<label for="phone">Téléphone</label>
-									<input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+									<input type="text" class="form-control" name="tel" id="phone" placeholder="Enter phone number">
 								</div>
 							</div>
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -71,19 +71,19 @@
 								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 									<div class="form-group">
 										<label for="Street">Rue</label>
-										<input type="name" class="form-control" id="Street" placeholder="Enter Street">
+										<input type="name" class="form-control" name="rue" id="Street" placeholder="Enter Street">
 									</div>
 								</div>
 								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 									<div class="form-group">
 										<label for="ciTy">Ville</label>
-										<input type="name" class="form-control" id="ciTy" placeholder="Enter City">
+										<input type="name" class="form-control" name="ville" id="ciTy" placeholder="Enter City">
 									</div>
 								</div>
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 									<div class="form-group">
 										<label for="sTate">Biographie</label>
-										<textarea cols="30" rows="5" type="text" class="form-control" id="" placeholder="Enter State"> </textarea>
+										<textarea cols="30" rows="5" type="text" name="bio" class="form-control" id="" placeholder="Enter State"> </textarea>
 									</div>
 								</div>
 								<div class="form-group">
