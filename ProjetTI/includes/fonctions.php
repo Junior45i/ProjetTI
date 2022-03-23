@@ -27,7 +27,7 @@ if(!function_exists('find_user_by_id')){
         global $conn;
 
         // A modifier si des infos supp sont à récup dans le futur
-       $q = $conn-> prepare('SELECT nomMem, preMem, dateNmembre, section, mail FROM membre where idMem =?');
+       $q = $conn-> prepare('SELECT nomMem, preMem, dateNmembre, section, mail, ville, rue, bio, sexe, administrateur FROM membre where idMem =?');
        $q->execute([$id]);
 
         $data = $q->fetchAll(PDO::FETCH_OBJ);
