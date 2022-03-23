@@ -24,7 +24,7 @@
 								<!-- TODO Rendre invisible et affichage avec ajax  (19)-->
 								<h5 class="user-name"><?= $_SESSION['pseudo']?></h5>
 								<h6 class="user-email">
-									<a href=""><?=$user->mail?></a>	
+									<!-- <a href=""><?=$user->mail?></a>	 -->
 								</h6>
 							</div>
 							<div class="about">
