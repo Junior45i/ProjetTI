@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS membre(
     rue VARCHAR(100),
     bio VARCHAR (250), 
     sexe CHAR(1),
-    administrateur TINYINT(1), 
+    administrateur TINYINT(1) DEFAULT 0 , 
     mdpMembre VARCHAR(30) NOT NULL,
     idMem INT UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (idMem)
@@ -66,5 +66,5 @@ ALTER TABLE likee
 add CONSTRAINT fkLikeMem FOREIGN KEY (idMem) REFERENCES membre(idMem),
 add CONstraint fkLikePubli FOREIGN KEY (idPubli) REFERENCES publication(idPubli);
 
-insert into membre(nomMem, preMem, dateNmembre, section, mail, mdpMembre, sexe) VALUES ('Oliosi', 'Ludovic', '1992-05-23', '2IG', 'mli@moi.mooi', '1234', 'G');
+insert into membre(nomMem, preMem, dateNmembre, section, mail, mdpMembre, sexe, administrateur) VALUES ('Oliosi', 'Ludovic', '1992-05-23', '2IG', 'mli@moi.mooi', '1234', 'G', 1);
 insert into publication(contenu, datePubli, idMem, compteur_like) VALUES ('Hello World, je suis grand beau et fort', '2022-03-16',1,0);
