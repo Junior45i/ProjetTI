@@ -15,8 +15,8 @@ try {
         // Vérification de 100% des champs remplit
         if (!empty($nom) && !empty($prenom) && !empty($naissance) && !empty($section) && !empty($mail) && !empty($mdp)) {
 
-            $sql = $conn->prepare("INSERT INTO membre (nomMem, preMem, dateNmembre, section, mail, mdpMembre, idMem) 
-                VALUES (:nom, :prenom, :naissance, :section, :mail, :mdp, NULL);");
+            $sql = $conn->prepare("INSERT INTO membre (nomMem, preMem, dateNmembre, section, mail,ville,rue,bio,sexe,administrateur, mdpMembre, idMem) 
+                VALUES (:nom, :prenom, :naissance, :section, :mail,NULL,NULL,NULL,NULL,0,:mdp,NULL);");
             $sql->bindParam(':nom', $nom, PDO::PARAM_STR, 50);
             $sql->bindParam(':prenom', $prenom, PDO::PARAM_STR, 50);
             $sql->bindParam(':naissance', $naissance, PDO::PARAM_STR, 50);

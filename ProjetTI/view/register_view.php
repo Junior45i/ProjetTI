@@ -15,7 +15,6 @@
         <div class="form-group">
             <label for="exampleInputEmail1">Nom</label>
             <input type="nom" class="form-control" id="nom" name="nom" aria-describedby="emailHelp" placeholder="Nom">
-
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Prenom</label>

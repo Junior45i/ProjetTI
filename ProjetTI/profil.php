@@ -21,5 +21,4 @@ if(!empty($_GET['id'])){
     // A vérifier
     header('Location: profil.php?id='.$_SESSION['user_id']);
 }
-
 ?>
