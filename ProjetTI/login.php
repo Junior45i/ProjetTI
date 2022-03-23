@@ -43,6 +43,7 @@ try {
 } catch (PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
 }
+
 ?>
 
 <?php require('view/login_view.php'); ?>

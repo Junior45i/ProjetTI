@@ -21,8 +21,11 @@
 								<div class="user-avatar">
 									<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
 								</div>
+								<!-- TODO Rendre invisible et affichage avec ajax  (19)-->
 								<h5 class="user-name"><?= $_SESSION['pseudo']?></h5>
-								<h6 class="user-email">Email</h6>
+								<h6 class="user-email">
+									<a href=""><?=$user->mail?></a>	
+								</h6>
 							</div>
 							<div class="about">
 								<h5>A propos</h5>

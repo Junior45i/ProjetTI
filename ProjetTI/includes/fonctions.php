@@ -1,6 +1,5 @@
 <?php
-include 'config/database.php';
-$conn = connectDB("localhost", "proj_tm_bdd", "root", "");
+
 // Pas fonctionelle
 
 // if(!function_exists('e')){
@@ -30,7 +29,7 @@ if(!function_exists('find_user_by_id')){
        $q = $conn-> prepare('SELECT nomMem, preMem, dateNmembre, section, mail, ville, rue, bio, sexe, administrateur FROM membre where idMem =?');
        $q->execute([$id]);
 
-        $data = $q->fetchAll(PDO::FETCH_OBJ);
+        $data = current($q->fetchAll(PDO::FETCH_OBJ));
         $q->closeCursor();
         return $data;
     }
