@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-// Connection DB
-include 'config/database.php';
 include 'includes/fonctions.php';
-$conn = connectDB("localhost", "proj_tm_bdd", "root", "");
 
 // Permet de n'afficher que si l'utilisateur à su ce connecter
 include('filters/auth_filter.php');
