@@ -1,7 +1,6 @@
 <?php
 session_start();
 // Page login dispo que pour visiteur
-
 include 'config/database.php';
 $conn = connectDB("localhost", "proj_tm_bdd", "root", "");
 // Si l'utilisateur est déjà connecté, cela le redirige vers son profil
