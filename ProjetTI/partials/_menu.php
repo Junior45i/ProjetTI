@@ -1,4 +1,5 @@
     <!-- Barre de navigation -->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">GossipHelha</a>
@@ -10,8 +11,13 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="index.php">Accueil</a>
                     </li>
-
                     <?php if (is_logged_in()) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href=".php">Fil d'actualité</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pubPost.php">Mes posts</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="profil.php?id=<?= get_session('user_id') ?>">Mon Profil</a>
                         </li>

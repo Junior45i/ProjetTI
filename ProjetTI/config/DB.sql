@@ -28,9 +28,10 @@ CREATE TABLE IF NOT EXISTS msg(
 ) engine = innodb;
 
 CREATE TABLE IF NOT EXISTS publication(
-    contenu VARCHAR(500) NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    content VARCHAR(500) NOT NULL,
     datePubli TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    compteur_like int UNSIGNED NOT NULL,
+    compteur_like int UNSIGNED DEFAULT 0,
     idPubli int UNSIGNED NOT NULL AUTO_INCREMENT,
     idMem INT UNSIGNED NOT NULL,
     PRIMARY KEY (idPubli, datePubli, idMem)
@@ -67,5 +68,5 @@ ALTER TABLE likee
 add CONSTRAINT fkLikeMem FOREIGN KEY (idMem) REFERENCES membre(idMem),
 add CONstraint fkLikePubli FOREIGN KEY (idPubli) REFERENCES publication(idPubli);
 
-insert into membre(nomMem, preMem, dateNmembre, section, mail, mdpMembre, sexe, administrateur) VALUES ('Oliosi', 'Ludovic', '1992-05-23', '2IG', 'mli@moi.mooi', '1234', 'G', 1);
-insert into publication(contenu, datePubli, idMem, compteur_like) VALUES ('Hello World, je suis grand beau et fort', '2022-03-16',1,0);
+insert into membre(nomMem, preMem, dateNmembre, section, mail, mdpMembre, sexe, telephone, administrateur) VALUES ('Oliosi', 'Ludovic', '1992-05-23', '2IG', 'mli@moi.mooi', '1234', 'G','0477974610', 1);
+insert into publication(title, content, datePubli, idMem, compteur_like) VALUES ('test','Hello World, je suis grand beau et fort', '2022-03-16',1,0);

@@ -20,15 +20,22 @@ if (!empty($_GET['id'])) {
 if (isset($_POST['update'])) {
 
     $errors = [];
-    extract($_POST);
-    $sql = $conn->prepare("UPDATE membre SET ville= :ville, rue= :rue, bio=: bio, sexe=: sexe, telephone=: telephone WHERE id= :id");
+    $ville = $_POST['ville'];
+    $rue = $_POST['rue'];
+    $bio = $_POST['bio'];
+    $sexe = $_POST['sexe'];
+    $telephone = $_POST['telephone'];
+    $idMem = $_SESSION['user_id'];
+
+    $sql = $conn->prepare("UPDATE membre SET ville=:ville, rue=:rue, bio=:bio, sexe=:sexe, telephone=:telephone WHERE idMem=:idMem");
+
 
     $sql->bindParam(':ville', $ville, PDO::PARAM_STR, 50);
     $sql->bindParam(':rue', $rue, PDO::PARAM_STR, 50);
     $sql->bindParam(':bio', $bio, PDO::PARAM_STR, 50);
     $sql->bindParam(':sexe', $sexe, PDO::PARAM_STR, 50);
     $sql->bindParam(':telephone', $telephone, PDO::PARAM_STR, 50);
-    $sql->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_STR, 50);
+    $sql->bindParam(':idMem', $_SESSION['user_id'], PDO::PARAM_STR, 50);
     $sql->execute();
     $errors[] = "Votre profil a été mis à jours";
 }

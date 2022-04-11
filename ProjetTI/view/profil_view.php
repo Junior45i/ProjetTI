@@ -81,7 +81,7 @@
 										</div>
 									</div>
 									<!-- Mettre en ajax -->
-									<?php
+									<!-- <?php
 									if (isset($errors) && count($errors) != 0) {
 										echo '<div class="alert alert-success alert-dismissible fade show" role="success">
                                                 <button type="button" class="btn-close" data-bs-dismiss="success" aria-label="Close"></button><br/>';
@@ -90,7 +90,7 @@
 										}
 										echo '</div>';
 									}
-									?>
+									?> -->
 								</div>
 							</form>
 						</div>
