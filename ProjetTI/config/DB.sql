@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS membre(
     rue VARCHAR(100),
     bio VARCHAR (250), 
     sexe CHAR(1),
+    telephone VARCHAR(12),
     administrateur TINYINT(1) DEFAULT 0 , 
     mdpMembre VARCHAR(30) NOT NULL,
     idMem INT UNSIGNED NOT NULL AUTO_INCREMENT,
