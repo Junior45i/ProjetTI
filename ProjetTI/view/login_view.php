@@ -1,38 +1,49 @@
 <?php include('partials/_header.php'); ?>
+
 <body>
-  <form method="POST">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="card-group mb-0">
-            <div class="card p-4">
-              <div class="card-body">
-                <h1>Se connecter</h1>
-                <p class="text-muted">Se connecter à votre compte</p>
-                <div class="input-group mb-3">
-                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" id="email" name="email" class="form-control" placeholder="Email">
+
+  <section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Se connecter</p>
+                  <!-- Mettre avec AJAX -->
+                  <?php
+                  if (isset($errors) && count($errors) != 0) {
+                    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                <strong>Vérifier vos informations !</strong>
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button><br/>';
+                    foreach ($errors as $error) {
+                      echo $error . '<br/>';
+                    }
+                    echo '</div>';
+                  }
+                  ?>
+                  <form method="POST" autocomplete="off">
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                      <input type="email" value="<?= get_input('email')?>"  class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Adresse Email" required="required" />
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password" id="mdp" name="mdp" class="form-control" placeholder="Mot de passe" required="required" />
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="login" id="login" name="login" class="btn btn-primary">Se connecter</button>
+                    </div>
+                  </form>
                 </div>
-                <div class="input-group mb-4">
-                  <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                  <input type="password" id="mdp" name="mdp" class="form-control" placeholder="Mot de passe">
-                </div>
-                <div class="row">
-                  <div class="col-6">
-                    <button type="login" id="login" name="login" class="btn btn-primary">Se connecter</button>
-                  </div>
-                  <div class="col-6 text-right">
-                    <button type="button" class="btn btn-link px-0">Mot de passer oublié</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
-              <div class="card-body text-center">
-                <div>
-                  <h2>S'enregistrer</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <button id ="new" name="new" type="button" class="btn btn-primary">S'enregistrer</button>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                  <img src="image/draw1.jpg" class="img-fluid" alt="Sample image">
                 </div>
               </div>
             </div>
@@ -40,7 +51,8 @@
         </div>
       </div>
     </div>
-  </form>
+    </div>
+  </section>
 </body>
 
 </html>
