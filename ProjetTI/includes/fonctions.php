@@ -32,6 +32,16 @@ if (!function_exists('e')) {
   
 }
 
+if (!function_exists('get_session')) {
+    function get_session($key){
+        if($key){
+            return !empty($_SESSION[$key])
+            ? e($_SESSION[$key])
+            : null;
+        }
+    }
+}
+
 //Récolter info d'un membre
 if (!function_exists('find_user_by_id')) {
     function find_user_by_id($id)
@@ -94,6 +104,14 @@ if (!function_exists('get_input')) {
         } else {
             return null;
         }
+    }
+}
+
+// Verifie si l'utilistauer est connecté
+if (!function_exists('is_logged_in')) {
+    function is_logged_in()
+    {
+       return isset($_SESSION['user_id']) || isset($_SESSION['pseudo']);
     }
 }
 

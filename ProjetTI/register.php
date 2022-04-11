@@ -3,6 +3,7 @@
 session_start();
 
 require('includes/fonctions.php');
+include('filters/guest_filter.php');
 // Action du formulaire
 
 if (isset($_POST['register'])) {

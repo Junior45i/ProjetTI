@@ -28,9 +28,8 @@ if (isset($_POST['login'])) {
 
             $_SESSION['user_id'] = $user->idMem;
             $_SESSION['pseudo'] = $user->preMem;
-            header('Location: profil.php?id=' . $user->idMem);
+            redirect('profil.php?id='.$user->idMem);
         } else {
-            // Faire en sorte que mauvais il ce passe un truc
             $errors[] = "Combinaison Identifiant/Password incorrecte";
             save_input_data();
         }

@@ -10,12 +10,23 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="index.php">Accueil</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.php">Connection</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="register.php">Inscription</a>
-                    </li>
+
+                    <?php if (is_logged_in()) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profil.php?id=<?= get_session('user_id') ?>">Mon Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Déconnexion</a>
+                        </li>
+                    <?php else : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php">Connection</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register.php">Inscription</a>
+                        </li>
+                    <?php endif; ?>
+
                 </ul>
             </div>
         </div>
