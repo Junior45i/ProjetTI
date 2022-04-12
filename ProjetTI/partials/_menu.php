@@ -8,15 +8,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php">Accueil</a>
-                    </li>
+
                     <?php if (is_logged_in()) : ?>
                         <li class="nav-item">
                             <a class="nav-link" href=".php">Fil d'actualité</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pubPost.php">Mes posts</a>
+                            <a class="nav-link" href="pubPost.php">Publier un post</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="myPost.php">Mes posts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="profil.php?id=<?= get_session('user_id') ?>">Mon Profil</a>
@@ -25,6 +26,9 @@
                             <a class="nav-link" href="logout.php">Déconnexion</a>
                         </li>
                     <?php else : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.php">Accueil</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="login.php">Connection</a>
                         </li>
