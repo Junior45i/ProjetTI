@@ -11,7 +11,7 @@
 
                     <?php if (is_logged_in()) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href=".php">Fil d'actualité</a>
+                            <a class="nav-link" href="feed.php">Fil d'actualité</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="pubPost.php">Publier un post</a>

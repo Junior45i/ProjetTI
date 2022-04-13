@@ -1,6 +1,6 @@
 <body>
     <?php include('partials/_header.php'); ?>
-
+    
     <div class="container">
         </br></br>
         <?php
@@ -14,7 +14,7 @@
                     <p class="card-text"><?= $question['content']; ?></p>
                     <a href="#" class="btn btn-primary">Accéder au post</a>
                     <a href="#" class="btn btn-warning">Modifier le post</a>
-                    <a href="#" class="btn btn-danger">Supprimer</a>
+                    <a href="delPost.php?idPubli=<?=$question['idPubli'];?>" class="btn btn-danger">Supprimer</a>
                 </div>
             </div>
         </br>
