@@ -16,8 +16,6 @@ if (isset($_POST['publier'])) {
         $insertQuestion = $conn->prepare("INSERT INTO publication(title, content, idMem)VALUES(:title,:content,:idMem)");
         $insertQuestion->bindParam(':title', $title, PDO::PARAM_STR, 50);
         $insertQuestion->bindParam(':content', $content, PDO::PARAM_STR, 50);
-        // $insertQuestion->bindParam(':datePubli', $datePubli, PDO::PARAM_STR, 50);
-        // $insertQuestion->bindParam(':compteur_like', 0, PDO::PARAM_STR, 50);
         $insertQuestion->bindParam(':idMem', $_SESSION['user_id'], PDO::PARAM_STR, 50);
         $insertQuestion->execute();
         $errors[] = "Votre post à été publié sur le site";

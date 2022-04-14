@@ -53,6 +53,10 @@ CREATE TABLE IF NOT EXISTS ami(
     PRIMARY KEY (idMem1, idMem2)
 ) engine = innodb;
 
+
+-- TABLE A RAJOUTEr
+CREATE TABLE `proj_tm_bdd`.`commentaire` ( `id_comment` INT(11) NOT NULL AUTO_INCREMENT , `id_auteur` INT(11) NOT NULL , `id_question` INT(11) NOT NULL , `contenu` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , PRIMARY KEY (`id_comment`)) ENGINE = InnoDB;
+
 ALTER TABLE publication
 add CONSTRAINT fkPublicationP FOREIGN KEY (idMem) REFERENCES membre(idMem);
 

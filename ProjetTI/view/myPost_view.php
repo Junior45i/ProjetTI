@@ -12,7 +12,7 @@
                 <div class="card-body">
                     
                     <p class="card-text"><?= $question['content']; ?></p>
-                    <a href="#" class="btn btn-primary">Accéder au post</a>
+                    <a href="post.php?idPubli=<?= $question['idPubli']; ?>" class="btn btn-primary">Accéder au post</a>
                     <a href="#" class="btn btn-warning">Modifier le post</a>
                     <a href="delPost.php?idPubli=<?=$question['idPubli'];?>" class="btn btn-danger">Supprimer</a>
                 </div>

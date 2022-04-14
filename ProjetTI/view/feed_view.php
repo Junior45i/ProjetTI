@@ -21,7 +21,8 @@
         while ($post = $getAllPosts->fetch()) {
         ?>
             <div class="card">
-                <h5 class="card-header"><?= $post['title']; ?></h5>
+                <h5 class="card-header"><?= $post['title']; ?>
+            </h5>
                 <div class="card-body">
 
                     <p class="card-text"><?= $post['content']; ?></p>
@@ -32,7 +33,8 @@
                         <button type="button" class="btn btn-outline-primary">
                             <i class="bi bi-chat-square-heart text-primary"></i> Je kiff
                         </button>
-                        Nombre de kiffs: <?= $post['compteur_like'] ?>
+                        Nombre de kiffs: <?= $post['compteur_like']?>
+                        <a href="post.php?idPubli=<?= $post['idPubli']; ?>" class="btn btn-primary">Accéder au post</a>
                     </p>
                 </div>
             </div>

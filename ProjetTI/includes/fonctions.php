@@ -3,25 +3,6 @@
 include 'config/database.php';
 $conn = connectDB("localhost", "proj_tm_bdd", "root", "");
 
-// Pas fonctionelle
-
-// if(!function_exists('e')){
-//     function e($string){
-//         if($string){
-//             return htmlspecialchars($string);
-//         }
-//     }
-// }
-
-// if(!function_exists('get_session')){
-//     function get_session($key){
-//         if ($key) {
-//             return !empty($_SESSION[$key])
-//             ? e($_SESSION[$key])
-//             :null;
-//         }
-//     }
-// }
 
 if (!function_exists('e')) {
     function e($string){
