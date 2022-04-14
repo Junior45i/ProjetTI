@@ -11,13 +11,13 @@
                                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">S'inscrire</p>
                                     <!-- Mettre avec AJAX -->
                                     <?php
-                                    if(isset($errors) && count($errors) !=0 ){
+                                    if (isset($errors) && count($errors) != 0) {
                                         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                 <strong>Vérifier vos informations !</strong>
                                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button><br/>';
-                                            foreach($errors as $error){
-                                                echo $error.'<br/>';
-                                            }
+                                        foreach ($errors as $error) {
+                                            echo $error . '<br/>';
+                                        }
                                         echo '</div>';
                                     }
                                     ?>
@@ -26,42 +26,55 @@
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
                                                 <label for="exampleInputEmail1">Nom</label>
-                                                <input type="nom" value="<?= get_input('nom')?>" class="form-control" id="nom" name="nom" aria-describedby="emailHelp" placeholder="Nom" required="required" />
+                                                <input type="nom" value="<?= get_input('nom') ?>" class="form-control" id="nom" name="nom" aria-describedby="emailHelp" placeholder="Nom" required="required" />
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
                                                 <label for="exampleInputPassword1">Prenom</label>
-                                                <input type="prenom" value="<?= get_input('prenom')?>" class="form-control" id="prenom" name="prenom" placeholder="Prenom" required="required" />
+                                                <input type="prenom" value="<?= get_input('prenom') ?>" class="form-control" id="prenom" name="prenom" placeholder="Prenom" required="required" />
                                             </div>
                                         </div>
+
+
+
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
                                                 <label for="exampleInputPassword1">Date de naissance</label>
-                                                <input type="naissance" value="<?= get_input('naissance')?>" class="form-control" id="naissance" name="naissance" placeholder="Date de naissance" required="required" />
+                                                <input type="naissance" value="<?= get_input('naissance') ?>" class="form-control" id="naissance" name="naissance" placeholder="Date de naissance" required="required" />
+                                                <script>
+                                                    $(document).ready(function() {
+                                                        $(function() {
+                                                            $("#naissance").datepicker({dateFormat: 'yy-mm-dd',
+                                                                changeYear: true,
+                                                                changeMonth: true,yearRange: "-40:-0"
+                                                            });
+                                                        });
+                                                    })
+                                                </script>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
                                                 <label for="exampleInputPassword1">Section</label>
-                                                <input type="Section" value="<?= get_input('section')?>"  class="form-control" id="section" name="section" placeholder="Section"required="required" />
+                                                <input type="Section" value="<?= get_input('section') ?>" class="form-control" id="section" name="section" placeholder="Section" required="required" />
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
                                                 <label for="exampleInputEmail1">Adresse Email</label>
-                                                <input type="email" value="<?= get_input('mail')?>"  class="form-control" id="mail" name="mail" aria-describedby="emailHelp" placeholder="Adresse Email" required="required" />
+                                                <input type="email" value="<?= get_input('mail') ?>" class="form-control" id="mail" name="mail" aria-describedby="emailHelp" placeholder="Adresse Email" required="required" />
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
                                                 <label for="exampleInputEmail1">Mot de passe:</label>
-                                                <input type="psw" class="form-control" id="mdp" name="mdp" aria-describedby="emailHelp" placeholder="Mot de passe:"required="required" />
+                                                <input type="psw" class="form-control" id="mdp" name="mdp" aria-describedby="emailHelp" placeholder="Mot de passe:" required="required" />
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">

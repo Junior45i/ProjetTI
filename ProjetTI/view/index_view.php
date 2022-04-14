@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-
+<body>
 <?php include('partials/_header.php'); ?>
 
     <!-- Description du site -->
