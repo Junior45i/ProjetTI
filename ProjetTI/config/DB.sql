@@ -54,8 +54,17 @@ CREATE TABLE IF NOT EXISTS ami(
 ) engine = innodb;
 
 
--- TABLE A RAJOUTEr
-CREATE TABLE `proj_tm_bdd`.`commentaire` ( `id_comment` INT(11) NOT NULL AUTO_INCREMENT , `id_auteur` INT(11) NOT NULL , `id_question` INT(11) NOT NULL , `contenu` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , PRIMARY KEY (`id_comment`)) ENGINE = InnoDB;
+CREATE TABLE if not exists commentaire ( 
+    id_comment INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+    id_auteur INT UNSIGNED NOT NULL ,
+    idPubli int UNSIGNED NOT NULL ,
+    contenu VARCHAR(255)  NOT NULL , 
+    PRIMARY KEY (id_comment, idPubli ,id_auteur)
+    ) ENGINE = innoDB;
+
+ALTER TABLE commentaire 
+add CONSTRAINT fkCommentaireAuteurExist FOREIGN KEY (id_auteur) REFERENCES membre(idMem),
+add CONSTRAINT fkCommentairePubliExist FOREIGN KEY (idPubli) REFERENCES publication(idPubli);
 
 ALTER TABLE publication
 add CONSTRAINT fkPublicationP FOREIGN KEY (idMem) REFERENCES membre(idMem);

@@ -1,4 +1,5 @@
-<?php include('partials/_header.php'); ?>
+<body>
+  <?php include('partials/_header.php'); ?>
 
 <body style="background-color: #eee;">
   <section class="">

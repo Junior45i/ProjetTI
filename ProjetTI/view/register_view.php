@@ -34,10 +34,24 @@
                                                 <input type="prenom" value="<?= get_input('prenom') ?>" class="form-control" id="prenom" name="prenom" placeholder="Prenom" required="required" />
                                             </div>
                                         </div>
+
+
+
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
+                                                <label for="exampleInputPassword1">Date de naissance</label>
                                                 <input type="naissance" value="<?= get_input('naissance') ?>" class="form-control" id="naissance" name="naissance" placeholder="Date de naissance" required="required" />
+                                                <script>
+                                                    $(document).ready(function() {
+                                                        $(function() {
+                                                            $("#naissance").datepicker({dateFormat: 'yy-mm-dd',
+                                                                changeYear: true,
+                                                                changeMonth: true,yearRange: "-40:-0"
+                                                            });
+                                                        });
+                                                    })
+                                                </script>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row align-items-center mb-4">

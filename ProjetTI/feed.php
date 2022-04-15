@@ -15,5 +15,6 @@ if(isset($_GET['search']) && !empty($_GET['search'])){
     // récupe les posts de la recherche
     $getAllPosts = $conn->query('SELECT title, content, datePubli, compteur_like, idPubli, idMem FROM publication WHERE title LIKE "%'.$usersSearch.'%" ORDER BY idPubli DESC');
 }
+
 ?>
 <?php require('view/feed_view.php'); ?>
