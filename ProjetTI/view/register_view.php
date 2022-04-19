@@ -1,7 +1,7 @@
-<body>
+<body style="background-color: #eee;">
     <?php include('partials/_header.php'); ?>
-    <section class="vh-100" style="background-color: #eee;">
-        <div class="container h-100">
+    <section>
+        <div class="container h-100" style="margin-top: +100px">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-lg-12 col-xl-11">
                     <div class="card text-black" style="border-radius: 25px;">
@@ -25,14 +25,12 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <label for="exampleInputEmail1">Nom</label>
                                                 <input type="nom" value="<?= get_input('nom') ?>" class="form-control" id="nom" name="nom" aria-describedby="emailHelp" placeholder="Nom" required="required" />
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <label for="exampleInputPassword1">Prenom</label>
                                                 <input type="prenom" value="<?= get_input('prenom') ?>" class="form-control" id="prenom" name="prenom" placeholder="Prenom" required="required" />
                                             </div>
                                         </div>
@@ -59,21 +57,18 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <label for="exampleInputPassword1">Section</label>
                                                 <input type="Section" value="<?= get_input('section') ?>" class="form-control" id="section" name="section" placeholder="Section" required="required" />
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <label for="exampleInputEmail1">Adresse Email</label>
                                                 <input type="email" value="<?= get_input('mail') ?>" class="form-control" id="mail" name="mail" aria-describedby="emailHelp" placeholder="Adresse Email" required="required" />
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <label for="exampleInputEmail1">Mot de passe:</label>
                                                 <input type="psw" class="form-control" id="mdp" name="mdp" aria-describedby="emailHelp" placeholder="Mot de passe:" required="required" />
                                             </div>
                                         </div>
