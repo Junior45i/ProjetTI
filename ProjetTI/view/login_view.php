@@ -1,9 +1,7 @@
-<body>
-  <?php include('partials/_header.php'); ?>
-
 <body style="background-color: #eee;">
-  <section class="">
-    <div class="container h-100" style="margin-top: +100px">
+  <?php include('partials/_header.php'); ?>
+  <section>
+    <div class="container h-75" style="margin-top: +100px">
       <div class="row d-flex justify-content-center align-items-center">
         <div class="col-lg-12 col-xl-11">
           <div class="card text-black" style="border-radius: 25px;">

@@ -1,7 +1,7 @@
 <body style="background-color: #eee;">
     <?php include('partials/_header.php'); ?>
     <section>
-        <div class="container h-100" style="margin-top: +100px">
+        <div class="container h-75" style="margin-top: +80px">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-lg-12 col-xl-11">
                     <div class="card text-black" style="border-radius: 25px;">
@@ -21,7 +21,7 @@
                                         echo '</div>';
                                     }
                                     ?>
-                                    <form method="POST">
+                                    <form method="POST" autocomplete="off">
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
@@ -34,20 +34,18 @@
                                                 <input type="prenom" value="<?= get_input('prenom') ?>" class="form-control" id="prenom" name="prenom" placeholder="Prenom" required="required" />
                                             </div>
                                         </div>
-
-
-
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <label for="exampleInputPassword1">Date de naissance</label>
                                                 <input type="naissance" value="<?= get_input('naissance') ?>" class="form-control" id="naissance" name="naissance" placeholder="Date de naissance" required="required" />
                                                 <script>
                                                     $(document).ready(function() {
                                                         $(function() {
-                                                            $("#naissance").datepicker({dateFormat: 'yy-mm-dd',
+                                                            $("#naissance").datepicker({
+                                                                dateFormat: 'yy-mm-dd',
                                                                 changeYear: true,
-                                                                changeMonth: true,yearRange: "-40:-0"
+                                                                changeMonth: true,
+                                                                yearRange: "-40:-0"
                                                             });
                                                         });
                                                     })
@@ -72,13 +70,19 @@
                                                 <input type="psw" class="form-control" id="mdp" name="mdp" aria-describedby="emailHelp" placeholder="Mot de passe:" required="required" />
                                             </div>
                                         </div>
-                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <button type="register" id="register" name="register" class="btn btn-primary">Inscription</button>
+                                        <div class="d-flex justify-content-center mx-4 mb-5 mb-lg-4">
+                                            <button type="register" id="register" name="register" class="btn btn-primary btn-lg">Inscription</button>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                                    <img src="image/draw1.jpg" class="img-fluid" alt="Sample image">
+                                    <h5>
+                                        <img src="image/logo.png" class="img-fluid" alt="Sample image">
+
+                                        GossipHelha est le réseau social des étudiants de la helha.<br>
+                                        Qui dit étudiants dit également potins.<br>
+                                        Grâce à cette plateforme, vous avez la possibilité de découvrir, tisser des liens d'amitiés, échanger etc avec des étudiants.<br>
+                                    </h5>
                                 </div>
                             </div>
                         </div>
