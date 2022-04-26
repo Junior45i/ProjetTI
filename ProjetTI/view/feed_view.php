@@ -116,11 +116,8 @@
                                                         </span>
                                                         <span class="ml-2">
                                                             <!-- Rajouter compteur commentaire -->
-                                                            <i class="bi bi-chat-square-dots"></i>11
+                                                            <a class="bi bi-chat-square-dots" href="post.php?idPubli=<?= $post['idPubli']; ?>"></a>11
                                                         </span>
-                                                    </p>
-
-                                                    <a href="post.php?idPubli=<?= $post['idPubli']; ?>" class="btn btn-primary">Accéder au post</a>
                                                     </p>
                                                 </div>
                                             </div>
