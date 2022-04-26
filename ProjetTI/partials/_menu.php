@@ -16,7 +16,7 @@
                             <a class="nav-link" href="pubPost.php">Publier un post</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="myPost.php">Mes posts</a>
+                            <a class="nav-link" href="view/myPost_view.php">Mes posts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="profil.php?id=<?= get_session('user_id') ?>">Mon Profil</a>

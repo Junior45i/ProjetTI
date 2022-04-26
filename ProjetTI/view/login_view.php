@@ -1,5 +1,6 @@
 <body style="background-color: #eee;">
   <?php include('partials/_header.php'); ?>
+
   <section>
     <div class="container h-75" style="margin-top: +100px">
       <div class="row d-flex justify-content-center align-items-center">

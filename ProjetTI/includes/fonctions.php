@@ -1,5 +1,4 @@
 <?php
-
 include 'config/database.php';
 $conn = connectDB("localhost", "proj_tm_bdd", "root", "");
 
@@ -10,7 +9,6 @@ if (!function_exists('e')) {
             return htmlspecialchars($string);
         }
     }
-  
 }
 
 if (!function_exists('get_session')) {

@@ -17,4 +17,5 @@ if(isset($_GET['search']) && !empty($_GET['search'])){
 }
 
 ?>
+
 <?php require('view/feed_view.php'); ?>
