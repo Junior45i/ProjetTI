@@ -10,13 +10,13 @@
 
                     <?php if (is_logged_in()) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="feed.php">Fil d'actualité</a>
+                            <a class="nav-link" href="feed_view.php">Fil d'actualité</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pubPost.php">Publier un post</a>
+                            <a class="nav-link" href="pubPost_view.php">Publier un post</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="view/myPost_view.php">Mes posts</a>
+                            <a class="nav-link" href="myPost_view.php">Mes posts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="profil.php?id=<?= get_session('user_id') ?>">Mon Profil</a>

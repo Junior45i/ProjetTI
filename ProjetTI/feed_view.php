@@ -1,5 +1,79 @@
+<?php
+session_start();
+include('filters/auth_filter.php');
+include('includes/fonctions.php');
+?>
+
 <body>
     <?php include('partials/_header.php'); ?>
+    <script>
+        $(document).ready(function() {
+            $(function() {
+                $.ajax({
+                    url: 'feed.php',
+                    type: 'POST',
+                    data: {
+                        myFunction: 'rechercheGlobale'
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        console.log(data.length);
+                        for (var d of data) {
+                            $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
+                                                <div class = 'd-flex align-items-start profile-feed-item'>\
+                                                <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png' alt = 'profile' class = 'img-sm rounded-circle'>\
+                                                <div class = 'ml-4' >\
+                                                <div class = 'ml-4' >\
+                                                <h6>" + d.idMem + "<small class = 'ml-4 text-muted'> <i class = 'bi bi-clock'> </i>" + d.datePubli + "</small></h6>\
+                                                <h5>" + d.title + "</h5> \
+                                                <p>" + d.content + "</p><p class = 'small text-muted mt-2 mb-0'><span>\
+                                                <i class = 'bi bi-heart'> </i>" + d.compteur_like + "</span>\
+                                                <span class = 'ml-2'>\
+                                                <a href = 'post.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'> </a>" + d.datePubli + "\
+                                                </span > \
+                                                </p> \
+                                                </div> \
+                                                </div> \
+                                                <br></div></div>")
+                        }
+                        $("#search").on("keyup", function() {
+                            var value = $(this).val().toLowerCase();
+                            $("#feed div").filter(function() {
+                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                            });
+                        });
+                    }
+                });
+            })
+            // $("search").click(function() {
+            //     $.ajax({
+            //         url: "feed.php",
+            //         type: 'POST',
+            //         data: {
+            //             myFunction: 'rechercheBarre',
+            //             myParams: {
+            //                 usersSearch: $(this).attr('id')
+            //             }
+            //         },
+            //         async: false,
+            //         dataType: 'text',
+            //         success: function(result) {
+            //             $("#result").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
+            //                                     <strong>Le post a bien été supprimé</strong>\
+            //                                     <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
+            //                                     </div>");
+            //             $('#' + idPublicationGlobal).parent().parent().remove();
+            //         },
+            //         error: function(result) {
+            //             console.log(result),
+            //                 $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+            //                                                             <strong> Aucun post existant </strong>\
+            //                                                             <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
+            //         }
+            //     });
+            // });
+        })
+    </script>
     <!-- Barre de recherche -->
     <div class="container">
         <br>
@@ -80,48 +154,25 @@
                             </div>
                             <div class="col-lg-8">
                                 <div class="profile-feed">
-                                    <div class="col-4">
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            Publier
-                                        </button>
-                                        <?php include('test.php'); ?>
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        ...
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                    </div>
                                     <form>
                                         <div class="form-group row">
                                             <div class="col-8">
-                                                <input type="search" name="search" class="form-control">
+                                                <input type="search" name="search" id="search" class="form-control">
                                             </div>
-                                            <div class="col-4">
-                                                <button class="btn btn-success" type="submit">Rechercher</button>
-                                            </div>
+                                            <!-- <div class="col-4">
+                                                <button class="btn btn-success" id="search" type="submit">Rechercher</button>
+                                            </div> -->
                                         </div>
                                     </form>
 
                                 </div>
-
+                                <div class="feed" id="feed">
+                                </div>
                                 <!-- Mettre en ajax -->
+
                                 <?php
-                                while ($post = $getAllPosts->fetch()) {
+                                /*while ($post = $getAllPosts->fetch()) {
                                 ?>
                                     <div class="profile-feed">
                                         <div class="d-flex align-items-start profile-feed-item">
@@ -135,6 +186,7 @@
                                                     <h5><?= $post['title']; ?></h5>
                                                     <p>
                                                         <?= $post['content']; ?>
+                                                    </p>
                                                     <p class="small text-muted mt-2 mb-0">
                                                         <span>
                                                             <i class="bi bi-heart"></i><?= $post['compteur_like'] ?>
@@ -150,7 +202,7 @@
                                         </div>
                                     </div>
                                 <?php
-                                }
+                                }*/
                                 ?>
                             </div>
                         </div>

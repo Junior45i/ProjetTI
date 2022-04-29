@@ -1,7 +1,6 @@
 <?php
 session_start();
-
-    // include('filters/auth_filter.php');
+include('filters/auth_filter.php');
 include('includes/fonctions.php');
 
 // Permet de n'afficher que si l'utilisateur à su ce connecter
