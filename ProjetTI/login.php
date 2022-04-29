@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
         if ($userTrouve) {
             //Enregistrement d'info à propos de cette utilisateur
             $user = $sql->fetch(PDO::FETCH_OBJ);
-
+            
             $_SESSION['user_id'] = $user->idMem;
             $_SESSION['pseudo'] = $user->preMem;
             $_SESSION['nom'] = $user->nomMem;
@@ -42,5 +42,4 @@ if (isset($_POST['login'])) {
     session_destroy();
 }
 ?>
-
-<?php require('view/login_view.php'); ?>
+ <?php require('view/login_view.php'); ?>

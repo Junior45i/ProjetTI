@@ -26,16 +26,12 @@
                         </li>
                     <?php else : ?>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.php">Accueil</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="login.php">Connection</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="register.php">Inscription</a>
                         </li>
                     <?php endif; ?>
-
                 </ul>
             </div>
         </div>

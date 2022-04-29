@@ -9,12 +9,11 @@ function delete($data)
     include('filters/auth_filter.php');
     include('includes/fonctions.php');
     $idOfQuestion = $data['myParams']['idPublication'];
-    echo $idOfQuestion;
             $deleteQuestion = $conn->prepare('DELETE FROM publication WHERE idPubli=:idPubli');
             $deleteQuestion->bindParam(':idPubli', $idOfQuestion, PDO::PARAM_STR, 50);
             $deleteQuestion->execute();
-            echo "supprimé";
+            echo "success";
     } catch (PDOException $e) {
-        echo $sql . "<br>" . $e->getMessage();
+            echo "nope";
     }
 }

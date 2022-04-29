@@ -12,11 +12,11 @@
 								</div>
 								<!-- TODO Rendre invisible et affichage avec ajax  (19)-->
 								<strong>
-									<h3 class="user-name"><?= e($user->preMem) ?></h3>
+									<h3 class="user-name" id="preMem"><?= e($user->preMem) ?></h3>
 								</strong>
-								<h3 class="user-mail"><?= e($user->mail) ?></h3>
+								<h3 class="user-mail" id="mail"><?= e($user->mail) ?></h3>
 							</div>
-							<div class="about">
+							<div class="about" id="about">
 								<h5>A propos</h5>
 								<p><?= e($user->bio) ?></p>
 							</div>
@@ -159,5 +159,6 @@
 		border-radius: 5px;
 		border: 0;
 		margin-bottom: 1rem;
+		
 	}
 </style>

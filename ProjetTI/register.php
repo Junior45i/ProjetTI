@@ -34,7 +34,6 @@ if (isset($_POST['register'])) {
         }
 
         if (count($errors) == 0) {
-            echo "test";
             $sql = $conn->prepare("INSERT INTO membre (nomMem, preMem, dateNmembre, section, mail, mdpMembre, idMem) 
                 VALUES (:nom, :prenom, :naissance, :section, :mail,:mdp,NULL);");
             $sql->bindParam(':nom', $nom, PDO::PARAM_STR, 50);
@@ -44,7 +43,7 @@ if (isset($_POST['register'])) {
             $sql->bindParam(':mail', $mail, PDO::PARAM_STR, 50);
             $sql->bindParam(':mdp', $mdp, PDO::PARAM_STR, 50);
             $sql->execute();
-            redirect('profil.php');
+            redirect('login.php');
         } else {
             save_input_data();
         }
@@ -61,8 +60,4 @@ if (isset($_POST['register'])) {
 } else {
     session_destroy();
 }
-
-?>
-
-
-<?php require('view/register_view.php'); ?>
+ require('view/register_view.php');

@@ -1,5 +1,5 @@
 <body>
-  <?php include('partials/_header.php'); ?>
+<?php include('partials/_header.php'); ?>
 
   <section>
     <div class="container h-75" style="margin-top: +100px">

@@ -19,17 +19,18 @@ include('includes/fonctions.php');
                     success: function(data) {
                         console.log(data.length);
                         for (var d of data) {
+                            console.log(d);
                             $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
                                                 <div class = 'd-flex align-items-start profile-feed-item'>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png' alt = 'profile' class = 'img-sm rounded-circle'>\
                                                 <div class = 'ml-4' >\
                                                 <div class = 'ml-4' >\
-                                                <h6>" + d.idMem + "<small class = 'ml-4 text-muted'> <i class = 'bi bi-clock'> </i>" + d.datePubli + "</small></h6>\
+                                                <h6>" + d.preMem + " " + d.nomMem + "<small class = 'ml-4 text-muted'> <i class = 'bi bi-clock'> </i>" + d.datePubli + "</small></h6>\
                                                 <h5>" + d.title + "</h5> \
                                                 <p>" + d.content + "</p><p class = 'small text-muted mt-2 mb-0'><span>\
                                                 <i class = 'bi bi-heart'> </i>" + d.compteur_like + "</span>\
                                                 <span class = 'ml-2'>\
-                                                <a href = 'post.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'> </a>" + d.datePubli + "\
+                                                <a href = 'post.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " +d.nbCom + "</a>\
                                                 </span > \
                                                 </p> \
                                                 </div> \
@@ -45,33 +46,6 @@ include('includes/fonctions.php');
                     }
                 });
             })
-            // $("search").click(function() {
-            //     $.ajax({
-            //         url: "feed.php",
-            //         type: 'POST',
-            //         data: {
-            //             myFunction: 'rechercheBarre',
-            //             myParams: {
-            //                 usersSearch: $(this).attr('id')
-            //             }
-            //         },
-            //         async: false,
-            //         dataType: 'text',
-            //         success: function(result) {
-            //             $("#result").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
-            //                                     <strong>Le post a bien été supprimé</strong>\
-            //                                     <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
-            //                                     </div>");
-            //             $('#' + idPublicationGlobal).parent().parent().remove();
-            //         },
-            //         error: function(result) {
-            //             console.log(result),
-            //                 $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
-            //                                                             <strong> Aucun post existant </strong>\
-            //                                                             <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
-            //         }
-            //     });
-            // });
         })
     </script>
     <!-- Barre de recherche -->
@@ -96,10 +70,6 @@ include('includes/fonctions.php');
                                     </div>
                                     <!-- Mettre bio -->
                                     <p class="w-75 mx-auto mb-3">Bureau Oberhaeuser is a design bureau focused on Information- and Interface Design. </p>
-                                    <div class="d-flex justify-content-center">
-                                        <!-- <button class="btn btn-success mr-1">Hire Me</button> -->
-                                        <a href="#addnew" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> New</a>
-                                    </div>
                                 </div>
                                 <div class="border-bottom py-4">
                                     <p>Posts</p>
@@ -218,11 +188,11 @@ include('includes/fonctions.php');
 
 <style type="text/css">
     body {
-        margin-top: 20px;
-    }
-
-    body {
-        color: #6c7293;
+        margin: 0;
+        color: #2e323c;
+        background: #f5f6fa;
+        position: relative;
+        height: 100%;
     }
 
     .profile-navbar .nav-item .nav-link {

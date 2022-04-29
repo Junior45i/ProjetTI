@@ -2,6 +2,13 @@
 include 'config/database.php';
 $conn = connectDB("localhost", "proj_tm_bdd", "root", "");
 
+if (!function_exists('redirect')) {
+    function redirect($page)
+    {
+        header('Location: '.$page);
+        exit();
+    }
+}
 
 if (!function_exists('e')) {
     function e($string){
@@ -55,13 +62,6 @@ if (!function_exists("is_already_in_use")) {
 }
 
 // redirection
-if (!function_exists('redirect')) {
-    function redirect($page)
-    {
-        header('Location: ' . $page);
-        exit();
-    }
-}
 
 // sauver donnée input
 if (!function_exists('save_input_data')) {
