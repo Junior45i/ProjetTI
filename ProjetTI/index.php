@@ -2,4 +2,4 @@
 session_start();
 
 require("includes/fonctions.php");
-redirect("login.php");
+redirect("login_view.php");

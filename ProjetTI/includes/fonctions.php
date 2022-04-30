@@ -18,6 +18,16 @@ if (!function_exists('e')) {
     }
 }
 
+
+
+if (!function_exists('alertPop')) {
+    function alertPop($string){
+        if($string){
+            return "<div class='alert alert-warning alert-dismissible fade show' role='alert'> <strong>.$string.'</strong><button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>";
+        }
+    }
+}
+
 if (!function_exists('get_session')) {
     function get_session($key){
         if($key){

@@ -4,6 +4,6 @@
 
     $_SESSION = [];
 
-    header('Location: login.php')
+    header('Location: login_view.php')
 
 ?>

@@ -43,7 +43,7 @@ if (isset($_POST['register'])) {
             $sql->bindParam(':mail', $mail, PDO::PARAM_STR, 50);
             $sql->bindParam(':mdp', $mdp, PDO::PARAM_STR, 50);
             $sql->execute();
-            redirect('login.php');
+            redirect('login_view.php');
         } else {
             save_input_data();
         }

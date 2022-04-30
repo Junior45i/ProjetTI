@@ -8,34 +8,33 @@ include('partials/_header.php'); ?>
 <body style="background-color: #eee;">
     <script>
         $(document).ready(function() {
-           
-                $("#publier").click(function() {
-                    $.ajax({
-                        url: 'pubPost.php',
-                        type: 'POST',
-                        data: {
-                            myFunction: 'ajouterPost',
-                            myParams: {
-                                title: $("#title").val(),
-                                content: $("#content").val()
-                            }
-                        },
-                        async: false,
-                        dataType: 'text',
-                        success: function(result) {
-                            $("#alert").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
+            $("#publier").click(function() {
+                $.ajax({
+                    url: 'pubPost.php',
+                    type: 'POST',
+                    data: {
+                        myFunction: 'ajouterPost',
+                        myParams: {
+                            title: $("#title").val(),
+                            content: $("#content").val()
+                        }
+                    },
+                    async: false,
+                    dataType: 'text',
+                    success: function(result) {
+                        $("#alert").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
                                                 <strong>Le post a été publié</strong>\
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
-                        },
-                        error: function(result) {
-                            console.log(result),
-                                $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+                    },
+                    error: function(result) {
+                        console.log(result),
+                            $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
                                                                         <strong> Un problème est survenu </strong>\
                                                                         <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
-                        }
-                    })
+                    }
                 })
+            })
         })
     </script>
     <div class="alert" id="alert">
