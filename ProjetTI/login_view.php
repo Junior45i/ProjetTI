@@ -45,7 +45,7 @@ include('partials/_header.php'); ?>
                             console.log(result);
                             if (result == "success") {
                               // Redirection automatisée car id attribué sur variable de
-                              window.location.href = "profil.php";
+                              window.location.href = "profil_view.php";
                             }else{
                              $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
                             <strong> Vérifier vos identifiants </strong>\

@@ -7,7 +7,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-
                     <?php if (is_logged_in()) : ?>
                         <li class="nav-item">
                             <a class="nav-link" href="feed_view.php">Fil d'actualité</a>
@@ -19,7 +18,7 @@
                             <a class="nav-link" href="myPost_view.php">Mes posts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="profil.php?id=<?= get_session('user_id') ?>">Mon Profil</a>
+                            <a class="nav-link" href="profil_view.php?id=<?= get_session('user_id') ?>">Mon Profil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="logout.php">Déconnexion</a>
