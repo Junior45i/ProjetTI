@@ -24,6 +24,7 @@
                 </div>
             </form>
             <?php
+    
             while ($answer = $getComment->fetch()) {
             ?>
                 <div class="card">
