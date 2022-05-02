@@ -30,7 +30,7 @@ include('includes/fonctions.php');
                                                 <p>" + d.content + "</p><p class = 'small text-muted mt-2 mb-0'><span>\
                                                 <i class = 'bi bi-heart'> </i>" + d.compteur_like + "</span>\
                                                 <span class = 'ml-2'>\
-                                                <a href = 'post.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " +d.nbCom + "</a>\
+                                                <a href = 'post_view.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " +d.nbCom + "</a>\
                                                 </span > \
                                                 </p> \
                                                 </div> \
@@ -122,12 +122,12 @@ include('includes/fonctions.php');
                                     </p>
                                 </div>
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-lg-6">
                                 <div class="profile-feed">
 
                                     <form>
                                         <div class="form-group row">
-                                            <div class="col-8">
+                                            <div class="col-6">
                                                 <input type="search" name="search" id="search" class="form-control">
                                             </div>
                                             <!-- <div class="col-4">
@@ -194,24 +194,19 @@ include('includes/fonctions.php');
         position: relative;
         height: 100%;
     }
-
     .profile-navbar .nav-item .nav-link {
         color: #6c7293;
     }
-
     .profile-navbar .nav-item .nav-link.active {
         color: #464dee;
     }
-
     .profile-navbar .nav-item .nav-link i {
         font-size: 1.25rem;
     }
-
     .profile-feed-item {
         padding: 1.5rem 0;
         border-bottom: 1px solid #e9e9e9;
     }
-
     .img-sm {
         width: 43px;
         height: 43px;
