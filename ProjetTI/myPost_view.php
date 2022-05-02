@@ -20,9 +20,8 @@ include('partials/_header.php'); ?>
                                         <h5 class = 'card-header' > " + d.title + " </h5> \
                                             <div class = 'card-body' >\
                                             <p class = 'card-text' > " + d.content + " </p> \
-                                            <a href = 'post.php?idPubli=" + d.idPubli + "'\
+                                            <a href = 'post_view.php?idPubli=" + d.idPubli + "'\
                                             class = 'btn btn-primary' > Accéder au post </a> \
-                                            <a href = '#'class = 'btn btn-warning' > Modifier le post </a> \
                                             <boutton id = " + d.idPubli + "\
                                             class = 'btn btn-danger'> Supprimer </boutton> \
                                             </div></div></br>")
