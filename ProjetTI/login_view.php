@@ -46,9 +46,9 @@ include('partials/_header.php'); ?>
                             if (result == "success") {
                               // Redirection automatisée car id attribué sur variable de
                               window.location.href = "profil_view.php";
-                            }else{
-                             $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
-                            <strong> Vérifier vos identifiants </strong>\
+                            } else {
+                              $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+                            <strong> une erreur est survenue </strong>\
                             <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
                             }
                           },
@@ -57,7 +57,7 @@ include('partials/_header.php'); ?>
                               console.log($("#mdp").val()),
                               console.log(result),
                               $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
-                            <strong> Vérifier vos identifiants </strong>\
+                            <strong> une erreur est survenue</strong>\
                             <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
                           }
                         })

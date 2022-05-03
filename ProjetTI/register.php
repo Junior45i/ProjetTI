@@ -17,7 +17,9 @@ function register($data)
     $naissance = $data['myParams']['naissance'];
     $section = $data['myParams']['section'];
     $mail = $data['myParams']['mail'];
-    $mdp = $data['myParams']['mdp'];
+    $mdpNonHash = $data['myParams']['mdp'];
+    $mdp = password_hash($mdpNonHash, PASSWORD_BCRYPT, $options = ['cost' => 12]);
+
     // Vérification de 100% des champs remplit
     // if (!empty($nom) && !empty($prenom) && !empty($naissance) && !empty($section) && !empty($mail) && !empty($mdp)) {
 
