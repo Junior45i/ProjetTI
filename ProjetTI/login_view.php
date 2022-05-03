@@ -84,7 +84,7 @@ include('partials/_header.php'); ?>
                   <hr class="mt-4">
                   <br>
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <a href="register.php" type="redirection" id="inscription" name="inscription" class="btn btn-success">Créer un nouveau compte</a>
+                    <a href="register_view.php" type="redirection" id="inscription" name="inscription" class="btn btn-success">Créer un nouveau compte</a>
                   </div>
 
                 </div>

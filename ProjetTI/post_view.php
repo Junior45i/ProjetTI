@@ -48,7 +48,7 @@ include('includes/fonctions.php');
                             console.log(d);
                             for (var d of data) {
                                 $("#commentaire").append("<div class='card'>\
-                                                        <div class='card-header'>" + d.id_auteur + "</div>\
+                                                        <div class='card-header'>" + d.preMem +" " + d.nomMem + "</div>\
                                                         <div class='card-body'>" + d.contenu + "</div>\
                                                     </div><br/>")
                             }
@@ -79,7 +79,7 @@ include('includes/fonctions.php');
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
                                 $("#commentaire").prepend("<div class='card'>\
-                                                        <div class='card-header'>" + id + "</div>\
+                                                        <div class='card-header'>Vous</div>\
                                                         <div class='card-body'>" + comment + "</div>\
                                                     </div><br/>")}
                                 else{
