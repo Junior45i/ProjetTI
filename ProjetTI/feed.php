@@ -15,4 +15,34 @@ function rechercheGlobale($data)
     $rs = $getAllPosts->fetchAll(PDO::FETCH_ASSOC);
     echo utf8_encode(json_encode($rs));
 }
+
+function afficherProfil($data)
+{
+    try {
+        session_start();
+        include('filters/auth_filter.php');
+        require('includes/fonctions.php');
+        $getInfoMembers = $conn->prepare('SELECT nomMem, preMem, dateNmembre, section, mail, telephone, ville, rue, bio, sexe, administrateur FROM membre where idMem =:idMem');
+        $getInfoMembers->bindParam(':idMem', $_SESSION['user_id'], PDO::PARAM_STR, 50);
+        $getInfoMembers->execute();
+        $rs = $getInfoMembers->fetchAll(PDO::FETCH_ASSOC);
+        echo utf8_encode(json_encode($rs));
+    } catch (PDOException $e) {
+    }
+}
+
+
+function rechercheUtilisateur($data)
+{
+    session_start();
+    include('filters/auth_filter.php');
+    include('includes/fonctions.php');
+    $idMem = $data['myParams']['idMem'];
+    // Récup questions sans recherche
+    $getInfo = $conn->prepare('SELECT * FROM membre WHERE idMem=:idMem');
+    $getInfo->bindParam(':idMem', $idMem, PDO::PARAM_STR, 50);
+    $getInfo->execute();
+    $rs = $getInfo->fetchAll(PDO::FETCH_ASSOC);
+    echo utf8_encode(json_encode($rs));
+}   
 ?>

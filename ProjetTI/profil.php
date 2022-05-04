@@ -6,6 +6,7 @@ function afficherProfil($data)
 {
     try {
         session_start();
+        include('filters/auth_filter.php');
         require('includes/fonctions.php');
         $getInfoMembers = $conn->prepare('SELECT nomMem, preMem, dateNmembre, section, mail, telephone, ville, rue, bio, sexe, administrateur FROM membre where idMem =:idMem');
         $getInfoMembers->bindParam(':idMem', $_SESSION['user_id'], PDO::PARAM_STR, 50);

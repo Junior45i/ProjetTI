@@ -13,13 +13,20 @@ function ajouterPost($data)
         $title = $data['myParams']['title'];
         $content = $data['myParams']['content'];
 
-        $insertQuestion = $conn->prepare("INSERT INTO publication(title, content, idMem)VALUES(:title,:content,:idMem)");
-        $insertQuestion->bindParam(':title', $title, PDO::PARAM_STR, 50);
-        $insertQuestion->bindParam(':content', $content, PDO::PARAM_STR, 50);
-        $insertQuestion->bindParam(':idMem', $_SESSION['user_id'], PDO::PARAM_STR, 50);
-        $insertQuestion->execute();
-        echo "supprimé";
+        if(!isset($title) || empty($title) || !isset($content) || empty($content)) {
+            echo "Merci de remplir tous les champs";
+        }
+        elseif (strlen($content) <= 3) {
+            echo 'Post trop court';
+        }else{ 
+            $insertQuestion = $conn->prepare("INSERT INTO publication(title, content, idMem)VALUES(:title,:content,:idMem)");
+            $insertQuestion->bindParam(':title', $title, PDO::PARAM_STR, 50);
+            $insertQuestion->bindParam(':content', $content, PDO::PARAM_STR, 50);
+            $insertQuestion->bindParam(':idMem', $_SESSION['user_id'], PDO::PARAM_STR, 50);
+            $insertQuestion->execute();
+            echo "valide";
+        }
     } catch (PDOException $e) {
-        echo $sql . "<br>" . $e->getMessage();
+        echo "rate";
     }
 }

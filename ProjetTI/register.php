@@ -8,7 +8,7 @@ function register($data)
     session_start();
 
     require('includes/fonctions.php');
-    // include('filters/guest_filter.php');
+    include('filters/guest_filter.php');
     // Action du formulaire
 
     // if (isset($_POST['register'])) {
@@ -20,27 +20,27 @@ function register($data)
     $mdpNonHash = $data['myParams']['mdp'];
     $mdp = password_hash($mdpNonHash, PASSWORD_BCRYPT, $options = ['cost' => 12]);
 
-    // Vérification de 100% des champs remplit
-    // if (!empty($nom) && !empty($prenom) && !empty($naissance) && !empty($section) && !empty($mail) && !empty($mdp)) {
-
-    //     $errors = [];
-    //     if (mb_strlen($nom) < 3) {
-    //         $errors[] = "Pseudo trop court! (Minimum 3 caractères)";
-    //     }
-
-    //     if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-    //         $errors[] = "Adresse email invalide";
-    //     }
-
-    //     if (mb_strlen($mdp) < 6) {
-    //         $errors[] = "Mot de passe trop court! (Minimum 6 caractères)";
-    //     }
-
-    //     if (is_already_in_use('mail', $mail, 'membre')) {
-    //         $errors[] = "Email déjà utilisée";
-    //     }
-
-    //     if (count($errors) == 0) {
+    
+    // Vérification de l'email
+    $rechercheMail = $conn->prepare("SELECT * FROM membre WHERE mail=:mail");
+    // // Attribution des paramètres de la requête préparée
+    $rechercheMail->bindParam(':mail', $mail, PDO::PARAM_STR, 50);
+    // // Exécution de la requête
+    $rechercheMail->execute();
+    // //FIN RECHERCHE DE L'ADRESSEMAIL
+    if ($rechercheMail->fetchColumn()) {
+        echo 'Mail déjà enregistrée';
+    } 
+    elseif ($mail == ""){
+        echo 'Email requis';
+    }
+    elseif(strlen($mdpNonHash)<=3){
+        echo 'Mot de passe trop court';
+    }
+    elseif(empty($nom) || empty($prenom) || empty($naissance) || empty($section) || empty($mail) || empty($mdpNonHash)){
+        echo 'Merci de remplir tous les champs';
+    }
+    else{
     $sql = $conn->prepare("INSERT INTO membre (nomMem, preMem, dateNmembre, section, mail, mdpMembre, idMem) 
                 VALUES (:nom, :prenom, :naissance, :section, :mail,:mdp,NULL);");
     $sql->bindParam(':nom', $nom, PDO::PARAM_STR, 50);
@@ -50,21 +50,6 @@ function register($data)
     $sql->bindParam(':mail', $mail, PDO::PARAM_STR, 50);
     $sql->bindParam(':mdp', $mdp, PDO::PARAM_STR, 50);
     $sql->execute();
-    //         } else {
-    //             save_input_data();
-    //         }
-    //         //remplacer par un renvoie json
-    //     } else {
-    //         $errors[] = "Veuillez remplir tout les champs !";
-    //         save_input_data();
-    //     }
-
-    //     // Ajouter vérification mdp (chapitre 7)
-
-    //     //Vérifier adresse email valide (chapitre 7)
-
-    // } else {
-    //     session_destroy();
-    // }
-    //  require('view/register_view.php');
+    echo "Valide";
+    }
 }

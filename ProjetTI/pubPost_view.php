@@ -22,14 +22,20 @@ include('partials/_header.php'); ?>
                     async: false,
                     dataType: 'text',
                     success: function(result) {
-                        $("#alert").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
+                        if (result == "valide") {
+                            $("#alert").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
                                                 <strong>Le post a été publié</strong>\
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
+                        } else {
+                            $("#alert").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
+                                                <strong>"+result+"</strong>\
+                                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
+                                                </div>");
+                        }
                     },
                     error: function(result) {
-                        console.log(result),
-                            $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+                        $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
                                                                         <strong> Un problème est survenu </strong>\
                                                                         <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
                     }
@@ -53,14 +59,14 @@ include('partials/_header.php'); ?>
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
                                             <label>Titre du post</label>
-                                            <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Titre du post" required="required" />
+                                            <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="" required="required" />
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
                                             <label>Contenu du post</label>
-                                            <textarea cols="30" rows="5" type="text" name="content" id="content" class="form-control" id="bio" placeholder="Contenu"> </textarea>
+                                            <textarea cols="30" rows="5" type="text" name="content" id="content" class="form-control" id="bio" placeholder="" required="required"> </textarea>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">

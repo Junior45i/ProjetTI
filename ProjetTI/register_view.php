@@ -1,7 +1,8 @@
 <?php
 session_start();
-// include('filters/auth_filter.php');
-include('includes/fonctions.php'); ?>
+include('filters/guest_filter.php');
+include('includes/fonctions.php');
+?>
 
 
 <body style="background-color: #eee;">
@@ -34,16 +35,23 @@ include('includes/fonctions.php'); ?>
                     },
                     async: false,
                     success: function(result) {
-                        location.href = 'login_view.php';
+                        if (result == "Valide") {
+                            location.href = 'login_view.php';
+                        } else {
+                            $("#alert").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
+                                                <strong>" + result + "</strong>\
+                                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
+                                                </div>");
+                        }
                     },
-                    error: function(result) {
-                    }
+                    error: function(result) {}
                 })
             });
         })
     </script>
     <section>
         <div class="container h-75" style="margin-top: +80px" id="test">
+            <div class="alert" id="alert"></div>
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-lg-12 col-xl-11">
                     <div class="card text-black" style="border-radius: 25px;">

@@ -3,11 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 26 avr. 2022 à 15:36
+-- Généré le : mar. 03 mai 2022 à 18:28
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -44,32 +47,33 @@ DROP TABLE IF EXISTS `commentaire`;
 CREATE TABLE IF NOT EXISTS `commentaire` (
   `id_comment` int(11) NOT NULL AUTO_INCREMENT,
   `id_auteur` int(11) NOT NULL,
-  `idPubli` int(11) NOT NULL,
+  `id_question` int(11) NOT NULL,
   `contenu` varchar(255) NOT NULL,
   PRIMARY KEY (`id_comment`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `commentaire`
 --
 
-INSERT INTO `commentaire` (`id_comment`, `id_auteur`, `idPubli`, `contenu`) VALUES
-(9, 3, 23, 'sdfsf'),
-(27, 3, 23, 'Test'),
-(28, 3, 23, 'qsd'),
-(29, 3, 23, 'qsd'),
-(30, 1, 23, 'dsf'),
-(31, 1, 1, 'Coucou grand maitre'),
-(32, 23, 24, 'Coucou moi'),
-(33, 23, 23, 'qsdqds'),
-(34, 24, 25, 'qsdqsdqs'),
-(35, 24, 25, 'Blabla'),
-(36, 24, 25, 'Blabla'),
-(37, 24, 25, 'Blabla'),
-(38, 24, 25, 'qsd'),
-(39, 24, 25, 'df'),
-(40, 1, 25, 'qsd'),
-(41, 1, 27, 'qsd');
+INSERT INTO `commentaire` (`id_comment`, `id_auteur`, `id_question`, `contenu`) VALUES
+(1, 1, 48, 'Test'),
+(2, 1, 48, 'sdf'),
+(3, 1, 48, 'sdf'),
+(4, 1, 48, 'sdf'),
+(5, 5, 50, 'test'),
+(6, 5, 50, 'Test'),
+(7, 10, 50, 'qsd'),
+(8, 10, 54, 'xxxxx'),
+(10, 10, 54, '&lt;script&gt;alert(&quot;coucou&quot;);&lt;/script&gt;'),
+(11, 10, 54, '(&quot;coucou&quot;)'),
+(12, 10, 54, '(&quot;coucou&quot;)'),
+(13, 10, 54, 'wxc'),
+(14, 10, 54, 'dsf'),
+(15, 10, 54, '&lt;script&gt;alert(&quot;coucou&quot;);&lt;/script&gt;'),
+(16, 10, 54, 'sdf'),
+(17, 10, 54, 'sdf'),
+(18, 10, 54, '&lt;script&gt;alert(&quot;coucou&quot;);&lt;/script&gt;');
 
 -- --------------------------------------------------------
 
@@ -105,20 +109,27 @@ CREATE TABLE IF NOT EXISTS `membre` (
   `sexe` char(1) DEFAULT NULL,
   `telephone` varchar(12) DEFAULT NULL,
   `administrateur` tinyint(1) DEFAULT '0',
-  `mdpMembre` varchar(30) NOT NULL,
+  `mdpMembre` varchar(100) NOT NULL,
   `idMem` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`idMem`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `membre`
 --
 
 INSERT INTO `membre` (`nomMem`, `preMem`, `dateNmembre`, `section`, `mail`, `ville`, `rue`, `bio`, `sexe`, `telephone`, `administrateur`, `mdpMembre`, `idMem`) VALUES
-('Oliosi', 'Ludovic', '1992-05-22 22:00:00', '2IG', 'mli@moi.mooi', 'qsdqs', 'qsdqsd', ' sqdqsd', 'F', 'qsdqsd', 1, '1234', 1),
-('Vanmalderen', 'Pascal', '2002-06-02 22:00:00', 'IG', 'pascal.vanmalderen@hotmail.be', NULL, NULL, NULL, NULL, NULL, 0, 'Pascal', 3),
-('Stoica', 'Marina', '2003-01-29 23:00:00', 'IG', 'test@gmail.com', 'PasAimé', 'Rue de ma mère', ' Coucou petite perruche', 'F', '048987894', 0, 'BlaBla134', 23),
-('Dolamiente', 'Julien', '1986-03-31 22:00:00', 'IG', 'juju@hotmail.be', 'Stertos Ville', 'Rue de la street', ' Habdoula je suis pas arabe j aime pas ca', 'H', '045557897654', 0, 'juju123456', 24);
+('Oliosi', 'Ludovic', '1992-05-22 22:00:00', '2IG', 'mli@moi.mooi', '', 'test', 'Bonjlkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk kkkkkkkkkk', 'F', '', 1, '1234', 1),
+('Pascal', 'Vanmalderen', '2002-06-02 22:00:00', 'IG', 'pascal.vanmalderen@hotmail.be', NULL, NULL, NULL, NULL, NULL, 0, 'Pascal1234', 2),
+('Vanmalderen', 'Test', '2022-04-25 22:00:00', 'IG', 'apscal@html.ne', '', '', ' Test', 'H', '', 0, 'Blablatest', 3),
+('sdf', 'sdf', '2022-04-20 22:00:00', 'IG', 'jdsf@hml.be', NULL, NULL, NULL, NULL, NULL, 0, 'SADS23', 4),
+('Vanmalderen', 'Pascal', '2002-06-02 22:00:00', 'IG', 'pv@hotmail.be', '', '', 'biloute', 'F', '', 0, '123456', 5),
+('sdf', 'sdf', '2022-05-01 22:00:00', 'IG', 'jqfsd@hmtl.e', NULL, NULL, NULL, NULL, NULL, 0, '123456', 6),
+('sdf', 'sdf', '2022-05-01 22:00:00', 'IG', 'sdfsdgf@hytml.be', NULL, NULL, NULL, NULL, NULL, 0, 'qsdqdsqd', 7),
+('qsd', 'sqd', '2022-05-15 22:00:00', 'IG', 'paosf@mlk', NULL, NULL, NULL, NULL, NULL, 0, 'AZERTY', 8),
+('qsdf', 'qsdf', '2004-05-03 22:00:00', 'IG', 'qsd@hmtl', NULL, NULL, NULL, NULL, NULL, 0, '$2y$12$k.Ti2h4PFdeZKRuUGbBmquEX877iPqEjodDBkfrk0XcLnW6soziWu', 9),
+('PA', 'PA', '2022-04-30 22:00:00', 'IG', 'pva@html.be', 'Oui', 'TEst', 'Je suis ludo le boss', 'F', '0474', 0, '$2y$12$TuIdg9BxCDz5N86ZbJ6jm.Z8CI.7ERPomvrIiBw90hS8rYSM6/jVS', 10),
+('qsddddd', 'df', '2022-05-01 22:00:00', 'IG', 'oisdfj@html.be', NULL, NULL, NULL, NULL, NULL, 0, '$2y$12$n0Qs60xq7UZR74UaLTYhQuTgJfzyt.NHBYQH8FZoYrcQOOdMl4WdS', 11);
 
 -- --------------------------------------------------------
 
@@ -147,29 +158,37 @@ CREATE TABLE IF NOT EXISTS `publication` (
   `title` varchar(100) NOT NULL,
   `content` varchar(500) NOT NULL,
   `datePubli` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `compteur_like` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `compteur_like` int(10) UNSIGNED DEFAULT '0',
   `idPubli` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `idMem` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`idPubli`,`datePubli`,`idMem`),
   KEY `fkPublicationP` (`idMem`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `publication`
 --
 
 INSERT INTO `publication` (`title`, `content`, `datePubli`, `compteur_like`, `idPubli`, `idMem`) VALUES
-('vcbcvb', ' vcbcvb', '2022-04-13 14:16:06', 0, 14, 3),
-('Blablabla', ' azerty', '2022-04-13 15:42:07', 0, 17, 3),
-('qsd', ' qsd', '2022-04-13 15:42:53', 0, 18, 3),
-('qsd', ' qsd', '2022-04-13 15:42:55', 0, 19, 3),
-('sqd', ' sqd', '2022-04-13 15:42:56', 0, 20, 3),
-('qsd', ' qsd', '2022-04-13 15:42:58', 0, 21, 3),
-('dsf', ' sdf', '2022-04-13 15:43:00', 0, 22, 3),
-('qsd', ' dsfg', '2022-04-13 15:43:02', 0, 23, 3),
-('Je suios nouvelle', ' coucou', '2022-04-14 13:16:17', 0, 24, 23),
-('qsdqsd', ' qsdqsd', '2022-04-19 09:48:34', 0, 26, 24),
-('qsd', ' qsdqsdsf', '2022-04-24 18:39:32', 0, 27, 1);
+('kb', ' qsldf', '2022-04-20 08:56:23', 0, 7, 2),
+('dgf', ' dfgfd', '2022-04-27 10:31:09', 0, 27, 1),
+('Ma grand est morte ', ' sdg', '2022-04-27 11:36:41', 0, 33, 1),
+('test', 'test', '2022-04-28 17:44:50', 0, 35, 1),
+('sdf', ' sdf', '2022-04-28 17:58:28', 0, 40, 1),
+('sdf', ' sdf', '2022-04-28 17:59:17', 0, 42, 1),
+('sdf', ' sdf', '2022-04-28 18:01:16', 0, 44, 1),
+('sdf', ' sdf', '2022-04-28 18:01:23', 0, 45, 1),
+('sdf', ' sdf', '2022-04-29 07:39:12', 0, 47, 1),
+('test', ' sdf', '2022-04-29 07:39:19', 0, 48, 1),
+('fdg', ' dfg', '2022-04-29 16:14:09', 0, 49, 1),
+('azert', ' azert', '2022-04-29 16:14:21', 0, 50, 1),
+('aze', ' aze', '2022-05-01 18:20:00', 0, 52, 5),
+('aaa', ' aaa', '2022-05-03 10:18:49', 0, 54, 10),
+('sdf', ' ', '2022-05-03 18:06:02', 0, 65, 10),
+('sdf', ' ', '2022-05-03 18:07:12', 0, 66, 10),
+('fdg', ' ', '2022-05-03 18:07:39', 0, 67, 10),
+('qsd', ' sdsdfsfd', '2022-05-03 18:17:01', 0, 68, 10),
+('sdf', ' sdf', '2022-05-03 18:17:35', 0, 69, 10);
 
 --
 -- Contraintes pour les tables déchargées

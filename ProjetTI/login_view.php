@@ -1,11 +1,49 @@
 <?php
 session_start();
-// include('filters/auth_filter.php');
+include('filters/guest_filter.php');
 include('includes/fonctions.php');
 include('partials/_header.php'); ?>
 
 <body>
   <section>
+    <script>
+      $(document).ready(function() {
+        $("#login").click(function() {
+          $.ajax({
+            url: 'login.php',
+            type: 'POST',
+            data: {
+              myFunction: 'connecter',
+              myParams: {
+                email: $("#email").val(),
+                mdp: $("#mdp").val()
+              }
+            },
+            async: false,
+            success: function(result) {
+              console.log(result);
+              if (result == "success") {
+                // Redirection automatisée car id attribué sur variable de
+                window.location.href = "profil_view.php";
+              } else {
+                $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+              <strong> une erreur est survenue </strong>\
+              <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
+              }
+            },
+            error: function(result) {
+              console.log($("#email").val()),
+                console.log($("#mdp").val()),
+                console.log(result),
+                $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+              <strong> une erreur est survenue</strong>\
+              <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
+            }
+          })
+        })
+      })
+    </script>
+
     <div class="container h-75" style="margin-top: +100px">
       <div class="row d-flex justify-content-center align-items-center">
         <div class="col-lg-12 col-xl-11">
@@ -27,44 +65,6 @@ include('partials/_header.php'); ?>
                   //   echo '</div>';
                   // }
                   ?>
-                  <script>
-                    $(document).ready(function() {
-                      $("#login").click(function() {
-                        $.ajax({
-                          url: 'login.php',
-                          type: 'POST',
-                          data: {
-                            myFunction: 'connecter',
-                            myParams: {
-                              email: $("#email").val(),
-                              mdp: $("#mdp").val()
-                            }
-                          },
-                          async: false,
-                          success: function(result) {
-                            console.log(result);
-                            if (result == "success") {
-                              // Redirection automatisée car id attribué sur variable de
-                              window.location.href = "profil_view.php";
-                            } else {
-                              $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
-                            <strong> une erreur est survenue </strong>\
-                            <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
-                            }
-                          },
-                          error: function(result) {
-                            console.log($("#email").val()),
-                              console.log($("#mdp").val()),
-                              console.log(result),
-                              $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
-                            <strong> une erreur est survenue</strong>\
-                            <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
-                          }
-                        })
-                      })
-                    })
-                  </script>
-
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>

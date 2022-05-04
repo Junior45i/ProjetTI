@@ -9,7 +9,7 @@ function connecter($data)
         // Page login dispo que pour visiteur
         // Si l'utilisateur est déjà connecté, cela le redirige vers son profil
         require('includes/fonctions.php');
-        // include('filters/auth_filter.php');
+        include('filters/guest_filter.php');
         // // Action du formulaire
         $email = $data['myParams']['email'];
         $mdp = $data['myParams']['mdp'];
@@ -34,7 +34,6 @@ function connecter($data)
                     $_SESSION['nom'] = $user['nomMem'];
                     echo "success";
                 }
-                // redirect('profil.php?id=' . $user->idMem);
                 //     } else {
                 //         // $errors[] = "Combinaison Identifiant/Password incorrecte";
                 //         // save_input_data();
@@ -45,7 +44,9 @@ function connecter($data)
                 //         // save_input_data();
             } else {
             }
+            // echo "Merci de vérifier vos informations";
         }
+        // echo "Merci de remplir les champs";
     } catch (PDOException $e) {
         // echo $sql . "<br>" . $e->getMessage();
     }
