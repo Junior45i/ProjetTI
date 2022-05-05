@@ -12,12 +12,12 @@ function register($data)
     // Action du formulaire
 
     // if (isset($_POST['register'])) {
-    $nom = $data['myParams']['nom'];
-    $prenom = $data['myParams']['prenom'];
-    $naissance = $data['myParams']['naissance'];
-    $section = $data['myParams']['section'];
-    $mail = $data['myParams']['mail'];
-    $mdpNonHash = $data['myParams']['mdp'];
+    $nom = htmlspecialchars($data['myParams']['nom']);
+    $prenom = htmlspecialchars($data['myParams']['prenom']);
+    $naissance = htmlspecialchars($data['myParams']['naissance']);
+    $section = htmlspecialchars($data['myParams']['section']);
+    $mail = htmlspecialchars($data['myParams']['mail']);
+    $mdpNonHash = htmlspecialchars( $data['myParams']['mdp']);
     $mdp = password_hash($mdpNonHash, PASSWORD_BCRYPT, $options = ['cost' => 12]);
 
     

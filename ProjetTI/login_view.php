@@ -26,8 +26,8 @@ include('partials/_header.php'); ?>
                 // Redirection automatisée car id attribué sur variable de
                 window.location.href = "profil_view.php";
               } else {
-                $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
-              <strong> une erreur est survenue </strong>\
+                $("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'> \
+              <strong> Combinaison mot de passe/ identifiant incorrecte </strong>\
               <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
               }
             },
@@ -35,7 +35,7 @@ include('partials/_header.php'); ?>
               console.log($("#email").val()),
                 console.log($("#mdp").val()),
                 console.log(result),
-                $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+                $("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'> \
               <strong> une erreur est survenue</strong>\
               <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
             }

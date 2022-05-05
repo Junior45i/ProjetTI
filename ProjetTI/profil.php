@@ -35,11 +35,11 @@ function update($data)
         include('includes/fonctions.php');
         // Permet de n'afficher que si l'utilisateur à su ce connecter
 
-        $ville = $data['myParams']['ville'];
-        $rue = $data['myParams']['rue'];
-        $bio = $data['myParams']['bio'];
-        $sexe = $data['myParams']['sexe'];
-        $telephone = $data['myParams']['telephone'];
+        $ville = htmlspecialchars($data['myParams']['ville']);
+        $rue = htmlspecialchars($data['myParams']['rue']);
+        $bio = htmlspecialchars($data['myParams']['bio']);
+        $sexe = htmlspecialchars($data['myParams']['sexe']);
+        $telephone = htmlspecialchars($data['myParams']['telephone']);
         $idMem = $_SESSION['user_id'];
 
         $sql = $conn->prepare("UPDATE membre SET ville=:ville, rue=:rue, bio=:bio, sexe=:sexe, telephone=:telephone WHERE idMem=:idMem");

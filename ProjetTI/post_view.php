@@ -48,7 +48,7 @@ include('includes/fonctions.php');
                             console.log(d);
                             for (var d of data) {
                                 $("#commentaire").append("<div class='card'>\
-                                                        <div class='card-header'>" + d.preMem +" " + d.nomMem + "</div>\
+                                                        <div class='card-header'>" + d.preMem + " " + d.nomMem + "</div>\
                                                         <div class='card-body'>" + d.contenu + "</div>\
                                                     </div><br/>")
                             }
@@ -73,17 +73,17 @@ include('includes/fonctions.php');
                             success: function(result) {
                                 var comment = $("#answer").val();
                                 var id = "<?php echo $_SESSION['user_id'] ?>";
-                                if(result == "reussi"){
-                                $("#alert").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
+                                if (result == "reussi") {
+                                    $("#alert").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
                                                 <strong>Le commentaire a été publié</strong>\
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
-                                $("#commentaire").prepend("<div class='card'>\
+                                    $("#commentaire").prepend("<div class='card'>\
                                                         <div class='card-header'>Vous</div>\
                                                         <div class='card-body'>" + comment + "</div>\
-                                                    </div><br/>")}
-                                else{
-                                    $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+                                                    </div><br/>")
+                                } else {
+                                    $("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'> \
                                                                         <strong> Merci d'entrer un commentaire </strong>\
                                                                         <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
                                 }

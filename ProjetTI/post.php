@@ -45,7 +45,7 @@ function ajoutCommentaire($data)
     include('filters/auth_filter.php');
     include('includes/fonctions.php');
     $idOfPost = $data['myParams']['idPubli'];
-    $user_answer = $data['myParams']['answer'];
+    $user_answer = htmlspecialchars($data['myParams']['answer']);
     if (isset($user_answer) &&!empty($user_answer)) {
         $user_answer = nl2br($user_answer);
         $insertAnswer = $conn->prepare("INSERT INTO commentaire(id_auteur, id_question, contenu)VALUES(:id_auteur,:idPubli,:contenu)");

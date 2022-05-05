@@ -65,7 +65,7 @@
 								dataType: 'text',
 								success: function(data) {
 									bio = $("#bio").val();
-									$("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+									$("#alert").html("<div class='alert alert-success alert-dismissible fade show' role='alert'> \
                                                                         <strong> Profil mis à jours </strong>\
                                                                         <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
 									$("#account-settings").html("<div class='user-profile'>\
@@ -83,7 +83,7 @@
 								},
 								error: function(result) {
 									console.log(result),
-										$("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+										$("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'> \
                                                                         <strong> Un problème est survenu </strong>\
                                                                         <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
 								}
@@ -92,7 +92,7 @@
 					},
 					error: function(result) {
 						console.log(result),
-							$("#account-settings").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+							$("#account-settings").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'> \
                                                                         <strong> Un problème est survenu </strong>\
                                                                         <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
 					}

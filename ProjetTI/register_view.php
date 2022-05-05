@@ -18,34 +18,48 @@ include('includes/fonctions.php');
                 });
             });
             $("#register").click(function() {
-                $.ajax({
-                    url: 'register.php',
-                    type: 'POST',
-                    dataType: "text",
-                    data: {
-                        myFunction: 'register',
-                        myParams: {
-                            nom: $("#nom").val(),
-                            prenom: $("#prenom").val(),
-                            naissance: $("#naissance").val(),
-                            section: $("#section").val(),
-                            mail: $("#mail").val(),
-                            mdp: $("#mdp").val()
-                        }
-                    },
-                    async: false,
-                    success: function(result) {
-                        if (result == "Valide") {
-                            location.href = 'login_view.php';
-                        } else {
-                            $("#alert").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
+                var VAL = $("#mail").val();
+                var email = new RegExp('^la[0-9]{6}@student.helha.be$');
+                if (email.test(VAL) == true) {
+                    $.ajax({
+                        url: 'register.php',
+                        type: 'POST',
+                        dataType: "text",
+                        data: {
+                            myFunction: 'register',
+                            myParams: {
+                                nom: $("#nom").val(),
+                                prenom: $("#prenom").val(),
+                                naissance: $("#naissance").val(),
+                                section: $("#section").val(),
+                                mail: $("#mail").val(),
+                                mdp: $("#mdp").val()
+                            }
+                        },
+                        async: false,
+                        success: function(result) {
+                            if (result == "Valide") {
+                                location.href = 'login_view.php';
+                            } else {
+                                $("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'>\
+                                                <strong>" + result + "</strong>\
+                                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
+                                                </div>");
+                            }
+                        },
+                        error: function(result) {
+                            $("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'>\
                                                 <strong>" + result + "</strong>\
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
                         }
-                    },
-                    error: function(result) {}
-                })
+                    })
+                } else {
+                    $("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'>\
+                                                <strong>Merci d'utiliser un mail HELHA </strong>\
+                                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
+                                                </div>");
+                }
             });
         })
     </script>
@@ -87,7 +101,7 @@ include('includes/fonctions.php');
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="email" value="<?= get_input('mail') ?>" class="form-control" id="mail" name="mail" aria-describedby="emailHelp" placeholder="Adresse Email" required="required" />
+                                            <input type="email" value="<?= get_input('mail') ?>" class="form-control" id="mail" name="mail" aria-describedby="emailHelp" placeholder="Adresse Email Helha" required="required" />
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row align-items-center mb-4">

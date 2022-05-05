@@ -10,8 +10,8 @@ function ajouterPost($data)
         include('includes/fonctions.php');
         // Permet de n'afficher que si l'utilisateur à su ce connecter
 
-        $title = $data['myParams']['title'];
-        $content = $data['myParams']['content'];
+        $title = htmlspecialchars($data['myParams']['title']);
+        $content = htmlspecialchars($data['myParams']['content']);
 
         if(!isset($title) || empty($title) || !isset($content) || empty($content)) {
             echo "Merci de remplir tous les champs";

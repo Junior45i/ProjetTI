@@ -11,8 +11,8 @@ function connecter($data)
         require('includes/fonctions.php');
         include('filters/guest_filter.php');
         // // Action du formulaire
-        $email = $data['myParams']['email'];
-        $mdp = $data['myParams']['mdp'];
+        $email = htmlspecialchars($data['myParams']['email']);
+        $mdp = htmlspecialchars($data['myParams']['mdp']);
 
         if (!empty($email) && !empty($mdp)) {
             // $errors = [];

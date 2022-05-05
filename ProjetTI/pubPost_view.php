@@ -28,14 +28,14 @@ include('partials/_header.php'); ?>
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
                         } else {
-                            $("#alert").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
-                                                <strong>"+result+"</strong>\
+                            $("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'>\
+                                                <strong>" + result + "</strong>\
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
                         }
                     },
                     error: function(result) {
-                        $("#alert").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+                        $("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'> \
                                                                         <strong> Un problème est survenu </strong>\
                                                                         <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
                     }
