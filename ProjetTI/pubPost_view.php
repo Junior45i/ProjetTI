@@ -8,6 +8,7 @@ include('partials/_header.php'); ?>
 <body style="background-color: #eee;">
     <script>
         $(document).ready(function() {
+            // Permet de publier un post
             $("#publier").click(function() {
                 $.ajax({
                     url: 'pubPost.php',
@@ -86,6 +87,7 @@ include('partials/_header.php'); ?>
 
 </html>
 
+<!-- Css de la page -->
 <style>
     textarea {
         resize: none;

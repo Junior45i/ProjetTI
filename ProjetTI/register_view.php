@@ -8,6 +8,7 @@ include('includes/fonctions.php');
 <body style="background-color: #eee;">
     <?php include('partials/_header.php'); ?>
     <script>
+        // Charge un datepicker pour l'inscription
         $(document).ready(function() {
             $(function() {
                 $("#naissance").datepicker({
@@ -17,6 +18,7 @@ include('includes/fonctions.php');
                     yearRange: "-40:-0"
                 });
             });
+            // Permet d'envoyer en DB le nouvel utilisateur
             $("#register").click(function() {
                 var VAL = $("#mail").val();
                 var email = new RegExp('^la[0-9]{6}@student.helha.be$');
@@ -77,6 +79,7 @@ include('includes/fonctions.php');
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
+                                            <!-- Les get inputs permette de garder les infos écritent dans les inputs -->
                                             <input type="nom" value="<?= get_input('nom') ?>" class="form-control" id="nom" name="nom" aria-describedby="emailHelp" placeholder="Nom" required="required" />
                                         </div>
                                     </div>

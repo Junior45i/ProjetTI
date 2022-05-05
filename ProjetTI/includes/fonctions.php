@@ -1,39 +1,37 @@
 <?php
+// Connection à la db
 include 'config/database.php';
 $conn = connectDB("localhost", "proj_tm_bdd", "root", "");
+// $conn = connectDB("localhost", "id18635332_proj_tm_bdd", "id18635332_administrateur", "}|+u|AXqLtXnlt!4");
 
+// Permet la redirection vers une page
 if (!function_exists('redirect')) {
     function redirect($page)
     {
-        header('Location: '.$page);
+        header('Location: ' . $page);
         exit();
     }
 }
 
+// Permet l'écriture en empechant injection XSS
+// Non utilisé
 if (!function_exists('e')) {
-    function e($string){
-        if($string){
+    function e($string)
+    {
+        if ($string) {
             return htmlspecialchars($string);
         }
     }
 }
 
-
-
-if (!function_exists('alertPop')) {
-    function alertPop($string){
-        if($string){
-            return "<div class='alert alert-warning alert-dismissible fade show' role='alert'> <strong>.$string.'</strong><button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>";
-        }
-    }
-}
-
+// Fonvtion de vérification permettant de récupérer la session d'un utilisateur
 if (!function_exists('get_session')) {
-    function get_session($key){
-        if($key){
+    function get_session($key)
+    {
+        if ($key) {
             return !empty($_SESSION[$key])
-            ? e($_SESSION[$key])
-            : null;
+                ? e($_SESSION[$key])
+                : null;
         }
     }
 }
@@ -55,7 +53,6 @@ if (!function_exists('find_user_by_id')) {
 }
 
 // Vérification de si un utilisateur est déjà présent
-
 if (!function_exists("is_already_in_use")) {
     function is_already_in_use($field, $value, $table)
     {
@@ -70,9 +67,6 @@ if (!function_exists("is_already_in_use")) {
         return $count;
     }
 }
-
-// redirection
-
 // sauver donnée input
 if (!function_exists('save_input_data')) {
     function save_input_data()
@@ -85,6 +79,7 @@ if (!function_exists('save_input_data')) {
     }
 }
 
+// retourne les données sauvegardée au dessus 
 if (!function_exists('get_input')) {
     function get_input($key)
     {
@@ -100,7 +95,6 @@ if (!function_exists('get_input')) {
 if (!function_exists('is_logged_in')) {
     function is_logged_in()
     {
-       return isset($_SESSION['user_id']) || isset($_SESSION['pseudo']);
+        return isset($_SESSION['user_id']) || isset($_SESSION['pseudo']);
     }
 }
-

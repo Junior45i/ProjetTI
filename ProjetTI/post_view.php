@@ -1,13 +1,15 @@
 <?php
+// Page d'affichage d'un post
 session_start();
 include('filters/auth_filter.php');
 include('includes/fonctions.php');
 ?>
-
 <body>
     <?php include('partials/_header.php'); ?>
     <script>
+        // Récupère l'id d'une publication
         var idPublication = <?php echo $_GET['idPubli'] . ";" ?>
+        // Récupère le post
         $(document).ready(function() {
             $.ajax({
                 url: 'post.php',
@@ -20,7 +22,6 @@ include('includes/fonctions.php');
                 },
                 dataType: 'json',
                 success: function(data) {
-                    console.log(data);
                     $("#containerPost").append("<section class='show-content'>\
                             <h3>" + data[0].title + "</h3>\
                             <hr>\
@@ -45,7 +46,6 @@ include('includes/fonctions.php');
                         },
                         dataType: 'json',
                         success: function(data) {
-                            console.log(d);
                             for (var d of data) {
                                 $("#commentaire").append("<div class='card'>\
                                                         <div class='card-header'>" + d.preMem + " " + d.nomMem + "</div>\
@@ -54,9 +54,9 @@ include('includes/fonctions.php');
                             }
                         },
                         error: function(data) {
-                            console.log(data);
                         }
                     })
+                    // Ajoute un commentaire
                     $("#comment").click(function() {
                         $.ajax({
                             url: 'post.php',
@@ -92,7 +92,6 @@ include('includes/fonctions.php');
                     })
                 },
                 error: function(data) {
-                    console.log(data);
                 }
             })
         })
@@ -105,9 +104,6 @@ include('includes/fonctions.php');
 
     </div>
     </section>
-
-    <?php
-    ?>
     </div>
 </body>
 

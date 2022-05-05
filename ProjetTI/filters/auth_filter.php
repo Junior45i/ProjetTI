@@ -1,9 +1,8 @@
 <?php
-// Verifie si var de ss existe sinon redirige vers la connection
+// Verifie si une variable de session existe sinon redirige vers la connection
 
 if(!isset($_SESSION['user_id']) && !isset($_SESSION['pseudo'])){
     header('Location: login_view.php');
     exit();
 }
-
 ?>

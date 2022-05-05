@@ -15,12 +15,10 @@ function connecter($data)
         $mdp = htmlspecialchars($data['myParams']['mdp']);
 
         if (!empty($email) && !empty($mdp)) {
-            // $errors = [];
             $sql = $conn->prepare("SELECT idMem,preMem,mdpMembre, nomMem FROM membre 
                             WHERE mail =:email");
 
             $sql->bindParam(':email', $email, PDO::PARAM_STR, 50);
-            // $sql->bindParam(':mdp', $mdp, PDO::PARAM_STR, 50);
             $sql->execute();
             $user = $sql->fetch();
 
@@ -34,20 +32,9 @@ function connecter($data)
                     $_SESSION['nom'] = $user['nomMem'];
                     echo "success";
                 }
-                //     } else {
-                //         // $errors[] = "Combinaison Identifiant/Password incorrecte";
-                //         // save_input_data();
-
-                //     }
-                //     } else {
-                //         // $errors[] = "Veuillez remplir tout les champs !";
-                //         // save_input_data();
             } else {
             }
-            // echo "Merci de vérifier vos informations";
         }
-        // echo "Merci de remplir les champs";
     } catch (PDOException $e) {
-        // echo $sql . "<br>" . $e->getMessage();
     }
 }

@@ -11,7 +11,6 @@ function register($data)
     include('filters/guest_filter.php');
     // Action du formulaire
 
-    // if (isset($_POST['register'])) {
     $nom = htmlspecialchars($data['myParams']['nom']);
     $prenom = htmlspecialchars($data['myParams']['prenom']);
     $naissance = htmlspecialchars($data['myParams']['naissance']);
@@ -23,11 +22,10 @@ function register($data)
     
     // Vérification de l'email
     $rechercheMail = $conn->prepare("SELECT * FROM membre WHERE mail=:mail");
-    // // Attribution des paramètres de la requête préparée
+    // Attribution des paramètres de la requête préparée
     $rechercheMail->bindParam(':mail', $mail, PDO::PARAM_STR, 50);
-    // // Exécution de la requête
+    // Exécution de la requête
     $rechercheMail->execute();
-    // //FIN RECHERCHE DE L'ADRESSEMAIL
     if ($rechercheMail->fetchColumn()) {
         echo 'Mail déjà enregistrée';
     } 

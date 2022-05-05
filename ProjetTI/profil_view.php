@@ -5,6 +5,7 @@
 	include('partials/_header.php'); ?>
 
 	<script>
+		// Affichage d'un profil
 		$(document).ready(function() {
 			$(function() {
 				$.ajax({
@@ -16,7 +17,6 @@
 					async: false,
 					dataType: 'json',
 					success: function(data) {
-						console.log(data)
 						for (var d of data) {
 							var bio = d.bio == null ? '' : d.bio;
 							$("#account-settings").html("<div class='user-profile'>\
@@ -37,16 +37,19 @@
 							var ville = d.ville;
 							var bio = d.bio;
 							var sexe = d.sexe;
+							// Condition pour le sexe de la personne
 							if (sexe == "H") {
 								$("#sexe").val('H');
 							} else {
 								$("#sexe").val('F');
 							}
+							// Récupère les val des inputs
 							$("#rue").val(rue)
 							$("#telephone").val(telephone)
 							$("#ville").val(ville)
 							$("#bio").val(bio)
 						}
+						// update en db les infos
 						$("#update").click(function() {
 							$.ajax({
 								url: 'profil.php',
@@ -82,7 +85,6 @@
 
 								},
 								error: function(result) {
-									console.log(result),
 										$("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'> \
                                                                         <strong> Un problème est survenu </strong>\
                                                                         <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
@@ -91,7 +93,6 @@
 						})
 					},
 					error: function(result) {
-						console.log(result),
 							$("#account-settings").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'> \
                                                                         <strong> Un problème est survenu </strong>\
                                                                         <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
@@ -177,6 +178,7 @@
 
 </html>
 
+<!-- CSS de la page -->
 <style type="text/css">
 	body {
 		margin: 0;

@@ -3,6 +3,7 @@ session_start();
 include('filters/auth_filter.php');
 include('includes/fonctions.php');
 ?>
+<!-- Affichage du feed -->
 
 <body>
     <?php include('partials/_header.php'); ?>
@@ -17,9 +18,7 @@ include('includes/fonctions.php');
                             },
                             dataType: 'json',
                             success: function(data) {
-                                console.log(data.length);
                                 for (var d of data) {
-                                    console.log(d);
                                     $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
                                                 <div class = 'd-flex align-items-start profile-feed-item'>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png' alt = 'profile' class = 'img-sm rounded-circle'>\
@@ -52,9 +51,12 @@ include('includes/fonctions.php');
                             },
                             dataType: 'json',
                             success: function(data) {
-                                console.log(data.length);
                                 for (var d of data) {
-                                    console.log(d);
+                                    var ville = d.ville == null ? '' : d.ville;
+                                    var rue = d.rue == null ? '' : d.rue;
+                                    var bio = d.bio == null ? '' : d.bio;
+                                    var sexe = d.sexe == null ? '' : d.sexe;
+                                    var telephone = d.telephone == null ? '' : d.telephone;
                                     $("#membre").append("<div class='border-bottom text-center pb-4 '>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png'\
                                                 alt = 'profile'\
@@ -62,10 +64,10 @@ include('includes/fonctions.php');
                                                 <div class = ' mb-3 text-center'>\
                                                 <h3>" + d.nomMem + " " + d.preMem + " </h3>\
                                                 <div class = 'd-flex align-items-center justify-content-center' >\
-                                                <h5 class = 'mb-0 mr-2 text-muted' >" + d.ville + "</h5>\
+                                                <h5 class = 'mb-0 mr-2 text-muted' >" + ville + "</h5>\
                                                 </div>\
                                                 </div>\
-                                                <p class = 'w-75 mx-auto mb-3 text-center' >" + d.bio + "</p>\
+                                                <p class = 'w-75 mx-auto mb-3 text-center' >" + bio + "</p>\
                                                 </div>\
                                                 <div class = 'border-bottom py-4'>\
                                                 </div>\
@@ -75,7 +77,7 @@ include('includes/fonctions.php');
                                                 Sexe\
                                                 </span>\
                                                 <span class = 'float-right text-muted'>\
-                                                <a>" + d.sexe + "</a> \
+                                                <a>" + sexe + "</a> \
                                                 </span>\
                                                 </p>\
                                                 <p class = 'clearfix' >\
@@ -83,7 +85,7 @@ include('includes/fonctions.php');
                                                 Phone\
                                                 </span>\
                                                 <span class = 'float-right text-muted' >\
-                                                " + d.telephone + "\
+                                                " + telephone + "\
                                                 </span>\
                                                 </p>\
                                                 <p class = 'clearfix' >\
@@ -99,7 +101,7 @@ include('includes/fonctions.php');
                                                 Ville\
                                                 </span>\
                                                 <span class = 'float-right text-muted' >\
-                                                " + d.ville + "\
+                                                " + ville + "\
                                                 </span>\
                                                 </p>\
                                                 <p class = 'clearfix' >\
@@ -107,7 +109,7 @@ include('includes/fonctions.php');
                                                 Rue\
                                                 </span>\
                                                 <span class = 'float-right text-muted' >\
-                                                <a>" + d.rue + "</a>\
+                                                <a>" + rue + "</a>\
                                                 </span>\
                                                 </p>\
                                                 </div>")
@@ -135,6 +137,11 @@ include('includes/fonctions.php');
                         dataType: 'json',
                         success: function(data) {
                             for (var d of data) {
+                                var ville = d.ville == null ? '' : d.ville;
+                                var rue = d.rue == null ? '' : d.rue;
+                                var bio = d.bio == null ? '' : d.bio;
+                                var sexe = d.sexe == null ? '' : d.sexe;
+                                var telephone = d.telephone == null ? '' : d.telephone;
                                 $("#membre").html("<div class='border-bottom text-center pb-4 '>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png'\
                                                 alt = 'profile'\
@@ -142,10 +149,10 @@ include('includes/fonctions.php');
                                                 <div class = ' mb-3 text-center'>\
                                                 <h3>" + d.nomMem + " " + d.preMem + " </h3>\
                                                 <div class = 'd-flex align-items-center justify-content-center' >\
-                                                <h5 class = 'mb-0 mr-2 text-muted' >" + d.ville + "</h5>\
+                                                <h5 class = 'mb-0 mr-2 text-muted' >" + ville + "</h5>\
                                                 </div>\
                                                 </div>\
-                                                <p class = 'w-75 mx-auto mb-3 text-center' >" + d.bio + "</p>\
+                                                <p class = 'w-75 mx-auto mb-3 text-center' >" + bio + "</p>\
                                                 </div>\
                                                 <div class = 'border-bottom py-4'>\
                                                 </div>\
@@ -155,7 +162,7 @@ include('includes/fonctions.php');
                                                 Sexe\
                                                 </span>\
                                                 <span class = 'float-right text-muted'>\
-                                                <a>" + d.sexe + "</a> \
+                                                <a>" + sexe + "</a> \
                                                 </span>\
                                                 </p>\
                                                 <p class = 'clearfix' >\
@@ -163,7 +170,7 @@ include('includes/fonctions.php');
                                                 Phone\
                                                 </span>\
                                                 <span class = 'float-right text-muted' >\
-                                                " + d.telephone + "\
+                                                " + telephone + "\
                                                 </span>\
                                                 </p>\
                                                 <p class = 'clearfix' >\
@@ -179,7 +186,7 @@ include('includes/fonctions.php');
                                                 Ville\
                                                 </span>\
                                                 <span class = 'float-right text-muted' >\
-                                                " + d.ville + "\
+                                                " + ville + "\
                                                 </span>\
                                                 </p>\
                                                 <p class = 'clearfix' >\
@@ -187,15 +194,14 @@ include('includes/fonctions.php');
                                                 Rue\
                                                 </span>\
                                                 <span class = 'float-right text-muted' >\
-                                                <a>" + d.rue + "</a>\
+                                                <a>" + rue + "</a>\
                                                 </span>\
                                                 </p>\
                                                 </div>")
                             }
                         },
                         error: function(data) {
-                            console.log(data),
-                                $("#membre").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+                            $("#membre").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
                                                                     <strong>" + data + "</strong>\
                                                                     <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
                         }

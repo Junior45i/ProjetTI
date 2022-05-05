@@ -3,6 +3,7 @@ if (isset($_REQUEST['myFunction']) && $_REQUEST['myFunction'] != '') {
     $_REQUEST['myFunction']($_REQUEST);
 }
 
+// Permet d'afficher un post
 function affichagePost($data)
 {
     session_start();
@@ -21,6 +22,7 @@ function affichagePost($data)
     }
 }
 
+// Permet l'affichage des commentaires spécifique à un post
 function affichageCommentaire($data)
 {
     session_start();
@@ -38,7 +40,7 @@ function affichageCommentaire($data)
     }
 }
 
-// Ajout de commentaire
+// Ajout de commentaire au post
 function ajoutCommentaire($data)
 {
     session_start();

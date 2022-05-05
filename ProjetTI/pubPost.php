@@ -2,6 +2,7 @@
 if (isset($_REQUEST['myFunction']) && $_REQUEST['myFunction'] != '') {
     $_REQUEST['myFunction']($_REQUEST);
 }
+// Permet d'ajouter un post
 function ajouterPost($data)
 {
     try {

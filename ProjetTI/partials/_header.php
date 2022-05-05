@@ -1,3 +1,4 @@
+<!-- Header de la page -->
 <!DOCTYPE html>
 <html lang="fr">
 

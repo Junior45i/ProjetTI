@@ -3,6 +3,8 @@
 if (isset($_REQUEST['myFunction']) && $_REQUEST['myFunction'] != '') {
     $_REQUEST['myFunction']($_REQUEST);
 }
+
+// Récupère toute les posts et le nombre de commentaire sur un post
 function rechercheGlobale($data)
 {
     session_start();
@@ -16,6 +18,7 @@ function rechercheGlobale($data)
     echo utf8_encode(json_encode($rs));
 }
 
+// Affichage du profil sur la gauche
 function afficherProfil($data)
 {
     try {
@@ -31,7 +34,7 @@ function afficherProfil($data)
     }
 }
 
-
+// Affichage du profil de l'utilisateur ayant un click
 function rechercheUtilisateur($data)
 {
     session_start();
