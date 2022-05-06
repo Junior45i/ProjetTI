@@ -82,7 +82,7 @@ include('includes/fonctions.php');
                                                         <div class='card-header'>Vous</div>\
                                                         <div class='card-body'>" + comment + "</div>\
                                                     </div><br/>");
-                                    $(".answer").val("");
+                                    $("#answer").val("");
                                 } else {
                                     $("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'> \
                                                                         <strong> Merci d'entrer un commentaire </strong>\
