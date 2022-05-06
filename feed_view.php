@@ -4,9 +4,11 @@ include('filters/auth_filter.php');
 include('includes/fonctions.php');
 ?>
 <!-- Affichage du feed -->
+
 <head>
     <link rel="icon" type="image/png" sizes="16x16" href="image/logoDetour.png">
 </head>
+
 <body>
     <?php include('partials/_header.php'); ?>
     <script>
@@ -227,7 +229,10 @@ include('includes/fonctions.php');
                                     <form>
                                         <div class="form-group row">
                                             <div class="col-6">
-                                                <input type="search" name="search" id="search" class="form-control">
+                                                <span class="input-group-text border-0" id="search-addon">
+                                                    <i class="fas fa-search"></i>
+                                                </span>
+                                                <input type="search" name="search" id="search" class="form-control" Placeholder="Recherche">
                                             </div>
                                             <!-- <div class="col-4">
                                                 <button class="btn btn-success" id="search" type="submit">Rechercher</button>
