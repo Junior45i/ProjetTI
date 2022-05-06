@@ -5,6 +5,10 @@ include('filters/auth_filter.php');
 include('includes/fonctions.php');
 ?>
 
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="image/logoDetour.png">
+</head>
+
 <body>
     <?php include('partials/_header.php'); ?>
     <script>
