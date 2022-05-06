@@ -4,9 +4,9 @@ session_start();
 include('filters/auth_filter.php');
 include('includes/fonctions.php');
 ?>
-<?php include('partials/_header.php'); ?>
 
 <body>
+    <?php include('partials/_header.php'); ?>
     <script>
         // Récupère l'id d'une publication
         var idPublication = <?php echo $_GET['idPubli'] . ";" ?>

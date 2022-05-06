@@ -2,10 +2,10 @@
 //Page d'affichage de nos posts'
 session_start();
 include('filters/auth_filter.php');
-include('includes/fonctions.php');
-include('partials/_header.php'); ?>
+include('includes/fonctions.php'); ?>
 
 <body>
+    <?php include('partials/_header.php'); ?>
     <script>
         // Affichege de base
         $(document).ready(function() {
