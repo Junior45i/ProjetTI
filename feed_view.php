@@ -229,10 +229,12 @@ include('includes/fonctions.php');
                                     <form>
                                         <div class="form-group row">
                                             <div class="col-6">
-                                                <span class="input-group-text border-0" id="search-addon">
-                                                    <i class="fas fa-search"></i>
-                                                </span>
-                                                <input type="search" name="search" id="search" class="form-control" Placeholder="Recherche">
+                                                <div class="input-group rounded">
+                                                    <span class="input-group-text border-0" id="search-addon">
+                                                        <i class="fas fa-search"></i>
+                                                    </span>
+                                                    <input type="search" name="search" id="search" class="form-control rounded" Placeholder="Recherche" aria-label="Search" aria-describedby="search-addon">
+                                                </div>
                                             </div>
                                             <!-- <div class="col-4">
                                                 <button class="btn btn-success" id="search" type="submit">Rechercher</button>
