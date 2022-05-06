@@ -28,6 +28,8 @@ include('partials/_header.php'); ?>
                                                 <strong>Le post a été publié</strong>\
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
+                            $("#title").val("");
+                            $("#content").val("");
                         } else {
                             $("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'>\
                                                 <strong>" + result + "</strong>\
