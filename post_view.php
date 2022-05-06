@@ -4,7 +4,8 @@ session_start();
 include('filters/auth_filter.php');
 include('includes/fonctions.php');
 ?>
-    <?php include('partials/_header.php'); ?>
+<?php include('partials/_header.php'); ?>
+
 <body>
     <script>
         // Récupère l'id d'une publication
@@ -53,8 +54,7 @@ include('includes/fonctions.php');
                                                     </div><br/>")
                             }
                         },
-                        error: function(data) {
-                        }
+                        error: function(data) {}
                     })
                     // Ajoute un commentaire
                     $("#comment").click(function() {
@@ -81,7 +81,8 @@ include('includes/fonctions.php');
                                     $("#commentaire").prepend("<div class='card'>\
                                                         <div class='card-header'>Vous</div>\
                                                         <div class='card-body'>" + comment + "</div>\
-                                                    </div><br/>")
+                                                    </div><br/>");
+                                    $(".answer").val("");
                                 } else {
                                     $("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'> \
                                                                         <strong> Merci d'entrer un commentaire </strong>\
@@ -91,8 +92,7 @@ include('includes/fonctions.php');
                         })
                     })
                 },
-                error: function(data) {
-                }
+                error: function(data) {}
             })
         })
     </script>
