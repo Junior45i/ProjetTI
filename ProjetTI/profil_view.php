@@ -1,3 +1,6 @@
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="image/logoDetour.png">
+</head>
 <body>
 	<?php session_start();
 	include('filters/auth_filter.php');
@@ -24,7 +27,7 @@
 									<img src='https://bootdey.com/img/Content/avatar/avatar7.png'>\
 								</div>\
 									<h3 class='user-name' id='preMem'> " + d.preMem + "</h3>\
-								<h3 class='user-mail' id='mail'>" + d.mail + "</h3>\
+								<h6 class='user-mail' id='mail'>" + d.mail + "</h6>\
 							</div>\
 							<div class='about' id='about'>\
 								<h5>A propos</h5>\
@@ -69,14 +72,14 @@
 								success: function(data) {
 									bio = $("#bio").val();
 									$("#alert").html("<div class='alert alert-success alert-dismissible fade show' role='alert'> \
-                                                                        <strong> Profil mis à jours </strong>\
+                                                                        <strong> Profil mis à jour </strong>\
                                                                         <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
 									$("#account-settings").html("<div class='user-profile'>\
 								<div class='user-avatar'>\
 									<img src='https://bootdey.com/img/Content/avatar/avatar7.png'>\
 								</div>\
 									<h3 class='user-name' id='preMem'> " + d.preMem + "</h3>\
-								<h3 class='user-mail' id='mail'>" + d.mail + "</h3>\
+								<h6 class='user-mail' id='mail'>" + d.mail + "</h6>\
 							</div>\
 							<div class='about' id='about'>\
 								<h5>A propos</h5>\
@@ -116,7 +119,7 @@
 					<div class="card-body">
 						<div class="row gutters">
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" id="alert">
-								<h6 class="mb-2 text-primary">Détail personnel</h6>
+								<h6 class="mb-2 text-primary">Détails personnels</h6>
 							</div>
 
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -131,7 +134,7 @@
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group">
 									<label for="phone">Téléphone</label>
-									<input type="text" class="form-control" name="telephone" id="telephone" placeholder="Enter phone number">
+									<input type="text" class="form-control" name="telephone" id="telephone" placeholder="Entrer un numéro de téléphone">
 								</div>
 							</div>
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -139,24 +142,24 @@
 							</div>
 							<div class="row gutters">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-									<h6 class="mt-3 mb-2 text-primary">Address</h6>
+									<h6 class="mt-3 mb-2 text-primary">Adresse</h6>
 								</div>
 								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 									<div class="form-group">
 										<label for="Street">Rue</label>
-										<input type="name" class="form-control" name="rue" id="rue" placeholder="Enter Street" value="">
+										<input type="name" class="form-control" name="rue" id="rue" placeholder="Entrer une rue" value="">
 									</div>
 								</div>
 								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 									<div class="form-group">
 										<label for="ciTy">Ville</label>
-										<input type="name" class="form-control" name="ville" id="ville" placeholder="Enter City">
+										<input type="name" class="form-control" name="ville" id="ville" placeholder="Entrer une ville">
 									</div>
 								</div>
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 									<div class="form-group">
 										<label for="sTate">Biographie</label>
-										<textarea cols="30" rows="5" type="text" name="bio" class="form-control" id="bio" placeholder="Enter State"> </textarea>
+										<textarea cols="30" rows="5" type="text" name="bio" class="form-control" id="bio" placeholder=""> </textarea>
 									</div>
 								</div>
 								<div class="form-group">

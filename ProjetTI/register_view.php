@@ -5,8 +5,8 @@ include('includes/fonctions.php');
 ?>
 
 
-<body style="background-color: #eee;">
     <?php include('partials/_header.php'); ?>
+<body style="">
     <script>
         // Charge un datepicker pour l'inscription
         $(document).ready(function() {
@@ -41,7 +41,7 @@ include('includes/fonctions.php');
                         async: false,
                         success: function(result) {
                             if (result == "Valide") {
-                                location.href = 'login_view.php';
+                                location.href = 'connection';
                             } else {
                                 $("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'>\
                                                 <strong>" + result + "</strong>\
@@ -66,7 +66,7 @@ include('includes/fonctions.php');
         })
     </script>
     <section>
-        <div class="container h-75" style="margin-top: +80px" id="test">
+        <div class="container h-75" style="" id="test">
             <div class="alert" id="alert"></div>
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-lg-12 col-xl-11">
@@ -75,7 +75,6 @@ include('includes/fonctions.php');
                             <div class="row justify-content-center">
                                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">S'inscrire</p>
-                                    <!-- Mettre avec AJAX -->
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
@@ -86,7 +85,7 @@ include('includes/fonctions.php');
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="prenom" value="<?= get_input('prenom') ?>" class="form-control" id="prenom" name="prenom" placeholder="Prenom" required="required" />
+                                            <input type="prenom" value="<?= get_input('prenom') ?>" class="form-control" id="prenom" name="prenom" placeholder="Prénom" required="required" />
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row align-items-center mb-4">
@@ -110,7 +109,7 @@ include('includes/fonctions.php');
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="psw" class="form-control" id="mdp" name="mdp" aria-describedby="emailHelp" placeholder="Mot de passe:" required="required" />
+                                            <input type="psw" class="form-control" id="mdp" name="mdp" aria-describedby="emailHelp" placeholder="Mot de passe" required="required" />
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center mx-4 mb-5 mb-lg-4">
@@ -121,9 +120,9 @@ include('includes/fonctions.php');
                                     <h5>
                                         <img src="image/logo.png" class="img-fluid" alt="Sample image">
 
-                                        GossipHelha est le réseau social des étudiants de la helha.<br>
-                                        Qui dit étudiants dit également potins.<br>
-                                        Grâce à cette plateforme, vous avez la possibilité de découvrir, tisser des liens d'amitiés, échanger etc avec des étudiants.<br>
+                                        GossipHelha est le réseau social des étudiants de la Helha.<br>
+                                        Qui dit étudiant dit également potins.<br>
+                                        Grâce à cette plateforme, vous avez la possibilité de tisser des liens d'amitiés et discuter entre vous.<br>
                                     </h5>
                                 </div>
                             </div>

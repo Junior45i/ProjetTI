@@ -9,26 +9,26 @@
                 <ul class="navbar-nav">
                     <?php if (is_logged_in()) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="feed_view.php">Fil d'actualité</a>
+                            <a class="nav-link" href="feed">Fil d'actualité</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pubPost_view.php">Publier un post</a>
+                            <a class="nav-link" href="publierUnPost">Publier un post</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="myPost_view.php">Mes posts</a>
+                            <a class="nav-link" href="mesPosts">Mes posts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="profil_view.php?id=<?= get_session('user_id') ?>">Mon Profil</a>
+                            <a class="nav-link" href="profil">Mon Profil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="logout.php">Déconnexion</a>
                         </li>
                     <?php else : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="login_view.php">Connection</a>
+                            <a class="nav-link" href="connection">Connexion</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="register_view.php">Inscription</a>
+                            <a class="nav-link" href="inscription">Inscription</a>
                         </li>
                     <?php endif; ?>
                 </ul>

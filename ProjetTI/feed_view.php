@@ -4,7 +4,9 @@ include('filters/auth_filter.php');
 include('includes/fonctions.php');
 ?>
 <!-- Affichage du feed -->
-
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="image/logoDetour.png">
+</head>
 <body>
     <?php include('partials/_header.php'); ?>
     <script>
@@ -82,7 +84,7 @@ include('includes/fonctions.php');
                                                 </p>\
                                                 <p class = 'clearfix' >\
                                                 <span class = 'float-left' >\
-                                                Phone\
+                                                GSM\
                                                 </span>\
                                                 <span class = 'float-right text-muted' >\
                                                 " + telephone + "\
@@ -167,7 +169,7 @@ include('includes/fonctions.php');
                                                 </p>\
                                                 <p class = 'clearfix' >\
                                                 <span class = 'float-left' >\
-                                                Phone\
+                                                GSM\
                                                 </span>\
                                                 <span class = 'float-right text-muted' >\
                                                 " + telephone + "\
@@ -236,41 +238,6 @@ include('includes/fonctions.php');
                                 </div>
                                 <div class="feed" id="feed">
                                 </div>
-                                <!-- Mettre en ajax -->
-
-                                <?php
-                                /*while ($post = $getAllPosts->fetch()) {
-                                ?>
-                                    <div class="profile-feed">
-                                        <div class="d-flex align-items-start profile-feed-item">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="profile" class="img-sm rounded-circle">
-                                            <div class="ml-4">
-                                                <div class="ml-4">
-                                                    <h6>
-                                                        <?= $post['idMem'] ?>
-                                                        <small class="ml-4 text-muted"><i class="bi bi-clock"></i><?= $post['datePubli'] ?></small>
-                                                    </h6>
-                                                    <h5><?= $post['title']; ?></h5>
-                                                    <p>
-                                                        <?= $post['content']; ?>
-                                                    </p>
-                                                    <p class="small text-muted mt-2 mb-0">
-                                                        <span>
-                                                            <i class="bi bi-heart"></i><?= $post['compteur_like'] ?>
-                                                        </span>
-                                                        <span class="ml-2">
-                                                            <!-- Rajouter compteur commentaire -->
-                                                            <a href="post.php?idPubli=<?= $post['idPubli']; ?>" class="bi bi-chat-square-dots"></a><?= $post['datePubli'] ?>
-                                                        </span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <br>
-                                        </div>
-                                    </div>
-                                <?php
-                                }*/
-                                ?>
                             </div>
                         </div>
                     </div>

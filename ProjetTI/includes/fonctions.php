@@ -1,8 +1,7 @@
 <?php
 // Connection à la db
 include 'config/database.php';
-$conn = connectDB("localhost", "proj_tm_bdd", "root", "");
-// $conn = connectDB("localhost", "id18635332_proj_tm_bdd", "id18635332_administrateur", "}|+u|AXqLtXnlt!4");
+$conn = connectDB("localhost", "u182100921_proj_tm_bdd", "u182100921_admin", "Pascal2244");
 
 // Permet la redirection vers une page
 if (!function_exists('redirect')) {

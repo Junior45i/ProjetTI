@@ -24,7 +24,7 @@ include('partials/_header.php'); ?>
             success: function(result) {
               if (result == "success") {
                 // Redirection automatisée car id attribué sur variable de
-                window.location.href = "profil_view.php";
+                window.location.href = "profil";
               } else {
                 $("#alert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'> \
               <strong> Combinaison mot de passe/ identifiant incorrecte </strong>\
@@ -41,7 +41,7 @@ include('partials/_header.php'); ?>
       })
     </script>
 
-    <div class="container h-75" style="margin-top: +100px">
+    <div class="container h-75" style="margin-top: +50px">
       <div class="row d-flex justify-content-center align-items-center">
         <div class="col-lg-12 col-xl-11">
           <div class="card text-black" style="border-radius: 25px;">
@@ -68,7 +68,7 @@ include('partials/_header.php'); ?>
                   <hr class="mt-4">
                   <br>
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <a href="register_view.php" type="redirection" id="inscription" name="inscription" class="btn btn-success">Créer un nouveau compte</a>
+                    <a href="inscription" type="redirection" id="inscription" name="inscription" class="btn btn-success">Créer un nouveau compte</a>
                   </div>
                 </div>
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
