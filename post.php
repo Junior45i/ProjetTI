@@ -30,7 +30,7 @@ function affichageCommentaire($data)
     include('includes/fonctions.php');
     $idOfPost = $data['myParams']['idPubli'];
     if (isset($idOfPost) && !empty($idOfPost)) {
-        $getComment = $conn->prepare('SELECT id_auteur, contenu, idMem, preMem, nomMem FROM commentaire INNER JOIN membre ON membre.idMem = commentaire.id_auteur WHERE id_question=:idPubli ORDER BY id_comment DESC');
+        $getComment = $conn->prepare('SELECT id_auteur, contenu, idMem, preMem, nomMem FROM commentaire INNER JOIN membre ON membre.idMem = commentaire.id_auteur WHERE id_question=:idPubli ORDER BY id_comment ASC');
         $getComment->bindParam(':idPubli', $idOfPost, PDO::PARAM_STR, 50);
         $getComment->execute();
         $rs = $getComment->fetchAll(PDO::FETCH_ASSOC);
