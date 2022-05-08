@@ -48,8 +48,8 @@ include('partials/_header.php'); ?>
     </script>
     <div class="alert" id="alert">
     </div>
-    <section class="vh-100">
-        <div class="container h-100" style="margin-top: +100px">
+    <section class="vh-75">
+        <div class="container h-75">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-lg-10 col-xl-10">
                     <div class="card text-black" style="border-radius: 25px;">
