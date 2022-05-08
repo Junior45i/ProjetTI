@@ -119,7 +119,7 @@
 					<div class="card-body">
 						<div class="row gutters">
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" id="alert">
-								<h6 class="mb-2 text-primary">Détails personnels</h6>
+								<h6 class="mb-2 text-primary">Détails personnels (les informations seront visibles par les utilisateurs)</h6>
 							</div>
 
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
