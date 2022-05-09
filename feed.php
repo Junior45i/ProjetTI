@@ -11,7 +11,7 @@ function rechercheGlobale($data)
     include('filters/auth_filter.php');
     include('includes/fonctions.php');
     // Récup questions sans recherche
-    $getAllPosts = $conn->query('SELECT (select count(*) from commentaire where id_question=idPubli) as nbCom , preMem, nomMem, title, content, datePubli, compteur_like, idPubli, idMem FROM publication inner join membre using(idMem) ORDER BY idPubli DESC LIMIT 0,150');
+    $getAllPosts = $conn->query('SELECT (select count(*) from commentaire where id_question=idPubli) as nbCom , preMem, nomMem, administrateur, title, content, datePubli, compteur_like, idPubli, idMem FROM publication inner join membre using(idMem) ORDER BY idPubli DESC LIMIT 0,150');
     //select count(*) from commentaire where id_question=idPubli as test
     //Calcul du nombre de commentaire
     $rs = $getAllPosts->fetchAll(PDO::FETCH_ASSOC);
