@@ -30,5 +30,6 @@ function setAdmin($data){
         $rs = $setAdmin->fetchAll(PDO::FETCH_ASSOC);
         echo $idMem;
     } catch (PDOException $e) {
+        echo "error";
     }
 }
