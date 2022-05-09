@@ -68,11 +68,11 @@ include('includes/fonctions.php');
                         async: false,
                         dataType: 'text',
                         success: function(result) {
-                            $("#result").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
+                            $('#' + idMem).html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
                                                 <strong>Le membre a bien été supprimé</strong>\
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
-                            $('#' + idMem).parent().parent().parent().remove();
+                            // $('#' + idMem).parent().parent().remove();
                         },
                         error: function(result) {
                             $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
