@@ -90,7 +90,7 @@ include('includes/fonctions.php');
 
     <div class="container bootstrap snippets bootdey">
     <br>    
-    <div class="result"></div>
+    <div class="result" id="result"></div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-box no-header clearfix">
