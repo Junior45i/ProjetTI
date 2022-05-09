@@ -42,7 +42,7 @@ include('includes/fonctions.php');
                                             <a href='#'>"+d.mail+"</a>\
                                         </td>\
                                         <td style='width: 20%;'>\
-                                            <a href='#'>\
+                                            <a href='#' class='danger'>\
                                                 <span class='fa-stack'>\
                                                     <i class='fa fa-square fa-stack-2x'></i>\
                                                     <i class='fa fa-trash-o fa-stack-1x fa-inverse'></i>\
