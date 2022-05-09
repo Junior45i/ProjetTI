@@ -35,7 +35,7 @@ include('includes/fonctions.php');
                                                 <p>" + d.content + "</p><p class = 'small text-muted mt-2 mb-0'>\
                                                 <span class = 'ml-2'>\
                                                 <a href = 'post_view.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " + d.nbCom + "</a>\
-                                                </span><test type='button' class='btn-sm mb-2 btn btn-danger float-end' id=" + d.idPubli + " style='margin-top:30px'>Supprimer</test>< br > < /div></div > ");
+                                                </span><br></div><test type='button' class='btn-sm mb-2 btn btn-danger float-end' id=" + d.idPubli + " style='margin-top:30px'>Supprimer</test></div>");
                                                 }
                                                 else
                                                     $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
