@@ -39,9 +39,10 @@ include('includes/fonctions.php');
                                             <span class='label label-default'>" + d.idMem + "</span>\
                                         </td>\
                                         <td>\
-                                            <a href='#'>" + d.mail + "</a>\
+                                            <a>" + d.mail + "</a>\
                                         </td>\
                                         <td style='width: 20%;'>\
+                                            <a class='table-link danger'>\
                                             <suppression class='table-link danger' id=" + d.idMem + ">\
                                                 <span class='fa-stack'>\
                                                     <i class='fa fa-square fa-stack-2x'></i>\
@@ -68,11 +69,10 @@ include('includes/fonctions.php');
                         async: false,
                         dataType: 'text',
                         success: function(result) {
-                            $('#' + idMem).html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
+                            $('#' + idMem).parent().parent().parent().html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
                                                 <strong>Le membre a bien été supprimé</strong>\
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
-                            // $('#' + idMem).parent().parent().remove();
                         },
                         error: function(result) {
                             $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
