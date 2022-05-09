@@ -27,8 +27,8 @@ include('includes/fonctions.php');
                             if (d.administrateur == 1) {
                                 $("#tableau").append("<tr><td>\
                                             <div class='form-check form-switch'>\
-                                                <input class='form-check-input' type='checkbox' id='flexSwitchCheckChecked' Checked>\
-                                                <label class='form-check-label' for='flexSwitchCheckChecked'></label>\
+                                                <input class='form-check-input' type='checkbox' id=" + idMem + " Checked>\
+                                                <label class='form-check-label' for=" + idMem + "></label>\
                                             </div>\
                                         </td>\
                                         <td>\
@@ -55,8 +55,8 @@ include('includes/fonctions.php');
                             } else {
                                 $("#tableau").append("<tr><td>\
                                             <div class='form-check form-switch'>\
-                                                <input class='form-check-input' type='checkbox' id='flexSwitchCheckChecked'>\
-                                                <label class='form-check-label' for='flexSwitchCheckChecked'></label>\
+                                                <input class='form-check-input' type='checkbox' id=" + idMem + ">\
+                                                <label class='form-check-label' for=" + idMem + "></label>\
                                             </div>\
                                         </td>\
                                         <td>\
