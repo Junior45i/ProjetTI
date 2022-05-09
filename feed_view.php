@@ -152,7 +152,7 @@ include('includes/fonctions.php');
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
                             //Suppression en visuel par suppression des parents
-                            $('#' + idPublication).parent().parent().remove();
+                            $('#' + idPublication).parent().remove();
                         },
                         error: function(result) {
                             $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
