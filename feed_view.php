@@ -39,9 +39,8 @@ include('includes/fonctions.php');
                                                 </div> \
                                                 </div> \
                                                 <br></div></div>");
-                                    console.log(data);
                                     if (admin == 1) {
-                                        $("#feed").append("<test type='button' class='btn btn-danger' id=" + idPubli + ">Supprimer</test>")
+                                        $("#feed").append("<test type='button' class='btn btn-danger' id=" + d.idPubli + ">Supprimer</test>")
                                     }
 
                                 }
