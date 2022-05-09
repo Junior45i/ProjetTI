@@ -43,10 +43,12 @@ include('includes/fonctions.php');
                                         </td>\
                                         <td style='width: 20%;'>\
                                             <a href='#' class='table-link danger'>\
-                                                <span class='fa-stack' id="+d.idMem+">\
+                                            <suppression id="+d.idMem+">\
+                                                <span class='fa-stack'>\
                                                     <i class='fa fa-square fa-stack-2x'></i>\
                                                     <i class='fa fa-trash-o fa-stack-1x fa-inverse'></i>\
                                                 </span>\
+                                            </suppression>\
                                             </a>\
                                         </td></tr>")
                     }
