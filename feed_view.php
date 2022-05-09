@@ -25,7 +25,7 @@ include('includes/fonctions.php');
                             success: function(data) {
                                 for (var d of data) {
                                     $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
-                                                <div class = 'd-flex align-items-start profile-feed-item'>\
+                                                <div class = 'd-flex align-items-start profile-feed-item' id='test'>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png' alt = 'profile' class = 'img-sm rounded-circle'>\
                                                 <div class = 'ml-4' >\
                                                 <div class = 'ml-4' >\
@@ -34,11 +34,11 @@ include('includes/fonctions.php');
                                                 <p>" + d.content + "</p><p class = 'small text-muted mt-2 mb-0'>\
                                                 <span class = 'ml-2'>\
                                                 <a href = 'post_view.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " + d.nbCom + "</a>\
-                                                </span>");
+                                                </span><br></div></div>");
                                     if (admin == 1) {
-                                        $("#feed").append("<test type='button' class='btn btn-danger' id=" + d.idPubli + ">Supprimer</test>")
+                                        $("#test").append("<test type='button' class='btn btn-danger' id=" + d.idPubli + ">Supprimer</test>")
                                     }
-                                    $("#feed").append("</p></div></div><br></div></div>")
+
                                 }
                                 $("#search").on("keyup", function() {
                                     var value = $(this).val().toLowerCase();
