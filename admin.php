@@ -23,8 +23,10 @@ function setAdmin(){
         session_start();
         include('filters/auth_filter.php');
         require('includes/fonctions.php');
-        $setAdmin = $conn->prepare('UPDATE membre SET administrateur=1 WHERE idMem=:idMem');
-        // $setAdmin->bindParam(':changeAdmin', $changeAdmin, PDO::PARAM_STR, 50);
+        $idMem = $data['myParams']['idMem'];
+        $administrateur = $data['myParams']['changeAdmin'];
+        $setAdmin = $conn->prepare('UPDATE membre SET administrateur=:administrateur WHERE idMem=:idMem');
+        $setAdmin->bindParam(':administrateur', $administrateur, PDO::PARAM_STR, 50);
         $setAdmin->bindParam(':idMem', $idMem, PDO::PARAM_STR, 50);
         $setAdmin->execute();
         echo $idMem;
