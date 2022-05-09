@@ -32,22 +32,22 @@ include('includes/fonctions.php');
                                         </td>\
                                         <td>\
                                             <img src='https://bootdey.com/img/Content/user_1.jpg' alt=''>\
-                                            <h3 class='user-link'>" + d.nomMem + " " + d.preMem + "1</h3>\
+                                            <h3 class='user-link'>" + d.nomMem + " " + d.preMem + "</h3>\
                                             <span class='user-subhead'>Member</span>\
                                         </td>\
                                         <td class='text-center'>\
-                                            <span class='label label-default'>pending</span>\
+                                            <span class='label label-default'>"+d.idMem+"</span>\
                                         </td>\
                                         <td>\
-                                            <a href='#'>marlon@brando.com</a>\
+                                            <a href='#'>"+d.mail+"</a>\
                                         </td>\
                                         <td style='width: 20%;'>\
-                                            <a href='#' class='table-link danger'>\
+                                            <a href='#'>\
                                                 <span class='fa-stack'>\
                                                     <i class='fa fa-square fa-stack-2x'></i>\
                                                     <i class='fa fa-trash-o fa-stack-1x fa-inverse'></i>\
                                                 </span>\
-                                            </a>`\
+                                            </a>\
                                         </td></tr>")
                     }
                 },
