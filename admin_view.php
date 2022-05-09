@@ -38,7 +38,7 @@ include('includes/fonctions.php');
                                         </td>
                                         <td>
                                             <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
-                                            <a href="#" class="user-link">Full name 1</a>
+                                            <h3> class="user-link">Full name 1</h3>
                                             <span class="user-subhead">Member</span>
                                         </td>
                                         <td class="text-center">
