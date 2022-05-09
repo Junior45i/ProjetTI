@@ -2,6 +2,7 @@
 if (isset($_REQUEST['myFunction']) && $_REQUEST['myFunction'] != '') {
     $_REQUEST['myFunction']($_REQUEST);
 }
+
 // Affiche le profil d'une personne
 function afficherProfil($data)
 {
@@ -46,7 +47,6 @@ function update($data)
         $sql->execute();
         echo "reussi";
     } catch (PDOException $e) {
-     
     }
 }
 

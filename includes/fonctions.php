@@ -97,3 +97,13 @@ if (!function_exists('is_logged_in')) {
         return isset($_SESSION['user_id']) || isset($_SESSION['pseudo']);
     }
 }
+
+if (!function_exists('is_admin')) {
+    function is_admin()
+    {
+        global $conn;
+        $q = $conn->prepare('SELECT administrateur FROM membre where idMem =?');
+        $q->execute($_SESSION['user_id']);
+        return $q;
+    }
+}

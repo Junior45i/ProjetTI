@@ -15,7 +15,7 @@ function connecter($data)
         $mdp = htmlspecialchars($data['myParams']['mdp']);
 
         if (!empty($email) && !empty($mdp)) {
-            $sql = $conn->prepare("SELECT idMem,preMem,mdpMembre, nomMem FROM membre 
+            $sql = $conn->prepare("SELECT idMem,preMem,mdpMembre, nomMem, administrateur FROM membre 
                             WHERE mail =:email");
 
             $sql->bindParam(':email', $email, PDO::PARAM_STR, 50);
@@ -30,6 +30,7 @@ function connecter($data)
                     $_SESSION['user_id'] = $user['idMem'];
                     $_SESSION['pseudo'] = $user['preMem'];
                     $_SESSION['nom'] = $user['nomMem'];
+                    $_SESSION['administrateur'] = $user['administrateur'];
                     echo "success";
                 }
             } else {

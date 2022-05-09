@@ -7,7 +7,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <?php if (is_logged_in()) : ?>
+                    <?php if (is_logged_in() && ($_SESSION['administrateur'] == 1)) : ?>
                         <li class="nav-item">
                             <a class="nav-link" href="feed">Fil d'actualité</a>
                         </li>
@@ -23,6 +23,24 @@
                         <li class="nav-item">
                             <a class="nav-link" href="logout.php">Déconnexion</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Admin</a>
+                        </li>
+                    <?php elseif (is_logged_in()) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feed">Fil d'actualité</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="publierUnPost">Publier un post</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mesPosts">Mes posts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profil">Mon Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Déconnexion</a>
                     <?php else : ?>
                         <li class="nav-item">
                             <a class="nav-link" href="connection">Connexion</a>
