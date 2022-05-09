@@ -73,6 +73,7 @@ include('includes/fonctions.php');
                                                 <strong>Le membre a bien été supprimé</strong>\
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
+                            $('#' + idMem).parent().parent().parent().remove();
                         },
                         error: function(result) {
                             $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
