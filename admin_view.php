@@ -89,8 +89,9 @@ include('includes/fonctions.php');
 
 
     <div class="container bootstrap snippets bootdey">
+    <br>    
+    <div class="result"></div>
         <div class="row">
-            <div class="result"></div>
             <div class="col-lg-12">
                 <div class="main-box no-header clearfix">
                     <div class="main-box-body clearfix">
@@ -118,7 +119,11 @@ include('includes/fonctions.php');
 
 <style>
     body {
-        background: #eee;
+        margin: 0;
+        color: #2e323c;
+        background: #f5f6fa;
+        position: relative;
+        height: 100%;
     }
 
     .main-box.no-header {
