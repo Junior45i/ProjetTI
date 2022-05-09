@@ -12,7 +12,7 @@ include('includes/fonctions.php');
 <body>
     <?php include('partials/_header.php'); ?>
     <script>
-        var admin = $_SESSION['administrateur'];
+        var admin = <?php echo $_SESSION['administrateur']; ?>;
         $(document).ready(function() {
             $(function() {
                     $.ajax({
