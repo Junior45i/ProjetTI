@@ -106,14 +106,8 @@ include('includes/fonctions.php');
                         async: false,
                         // dataType: 'text',
                         success: function(result) {
-                            for (var d of result) {
-                                console.log(d.result)
-                            }
                         },
                         error: function(result) {
-                            for (var d of result) {
-                                console.log(d.result)
-                            }
                         }
                     });
                 }),

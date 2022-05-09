@@ -29,7 +29,7 @@ function setAdmin($data){
         $setAdmin->bindParam(':administrateur', $administrateur, PDO::PARAM_STR, 50);
         $setAdmin->bindParam(':idMem', $idMem, PDO::PARAM_STR, 50);
         $setAdmin->execute();
-        echo $idMem;
+        echo "succes";
     } catch (PDOException $e) {
     }
 }
