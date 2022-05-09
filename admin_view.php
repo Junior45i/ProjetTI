@@ -116,6 +116,32 @@ include('includes/fonctions.php');
                             }
                         }
                     });
+                }),
+                $(document).on('click', 'suppression', function() {
+                    var idMem = $(this).attr('id');
+                    $.ajax({
+                        url: 'delPost.php',
+                        type: 'POST',
+                        data: {
+                            myFunction: 'deleteMem',
+                            myParams: {
+                                idMem: $(this).attr('id')
+                            }
+                        },
+                        async: false,
+                        dataType: 'text',
+                        success: function(result) {
+                            $('#' + idMem).parent().parent().parent().html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
+                                                <strong>Le membre a bien été supprimé</strong>\
+                                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
+                                                </div>");
+                        },
+                        error: function(result) {
+                            $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+                                                                        <strong> Un problème est survenu </strong>\
+                                                                        <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
+                        }
+                    });
                 })
         })
     </script>
