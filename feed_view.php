@@ -36,7 +36,7 @@ include('includes/fonctions.php');
                                                 <a href = 'post_view.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " + d.nbCom + "</a>\
                                                 </span>");
                                             if (admin == 1) {
-                                                $("#feed").html("<test type='button' class='btn btn-danger' id=" + d.idPubli + ">Supprimer</test>")
+                                                $("#feed").append("<test type='button' class='btn btn-danger' id=" + d.idPubli + ">Supprimer</test>")
                                             }
                                             $("#feed").append("<br></div></div>")
                                             }
