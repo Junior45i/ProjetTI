@@ -35,11 +35,11 @@ include('includes/fonctions.php');
                                                 <span class = 'ml-2'>\
                                                 <a href = 'post_view.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " + d.nbCom + "</a>\
                                                 </span >\
-                                                </p>");
+                                                </p></div></div>");
                                     if (admin == 1) {
                                         $("#feed").append("<test type='button' class='btn btn-danger' id=" + d.idPubli + ">Supprimer</test>")
                                     }
-                                    $("#feed").append("</div></div><br></div></div>")
+                                    // <br></div></div>
                                 }
                                 $("#search").on("keyup", function() {
                                     var value = $(this).val().toLowerCase();
@@ -148,9 +148,6 @@ include('includes/fonctions.php');
                                                 <strong>Le post a bien été supprimé</strong>\
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
-                            //Suppression en visuel par suppression des parents
-                            // A rajouter après
-                            // $('#' + idPublication).parent().remove();
                         },
                         error: function(result) {
                             $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
