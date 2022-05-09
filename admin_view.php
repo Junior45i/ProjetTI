@@ -100,7 +100,7 @@ include('includes/fonctions.php');
                         data: {
                             myFunction: 'setAdmin',
                             myParams: {
-                                idMem: idMem
+                                idMem= idMem
                                 // changeAdmin: util
                             }
                         },
