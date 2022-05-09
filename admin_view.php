@@ -12,6 +12,53 @@ include('includes/fonctions.php');
 <body>
     <?php include('partials/_header.php'); ?>
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <script>
+        // Récupère le post
+        $(document).ready(function() {
+            $.ajax({
+                url: 'admin.php',
+                type: 'POST',
+                data: {
+                    myFunction: 'tableauMem'
+                },
+                dataType: 'json',
+                success: function(data) {
+                    for (var d of data) {
+                        $("#tableau").append("<td>\
+                                            <div class='form-check form-switch'>\
+                                                <input class='form-check-input' type='checkbox' id='flexSwitchCheckChecked' checked>\
+                                                <label class='form-check-label' for='flexSwitchCheckChecked'></label>\
+                                            </div>\
+                                        </td>\
+                                        <td>\
+                                            <img src='https://bootdey.com/img/Content/user_1.jpg' alt=''>\
+                                            <h3 class='user-link'>Full name 1</h3>\
+                                            <span class='user-subhead'>Member</span>\
+                                        </td>\
+                                        <td class='text-center'>\
+                                            <span class='label label-default'>pending</span>\
+                                        </td>\
+                                        <td>\
+                                            <a href='#'>marlon@brando.com</a>\
+                                        </td>\
+                                        <td style='width: 20%;'>\
+                                            <a href='#' class='table-link danger'>\
+                                                <span class='fa-stack'>\
+                                                    <i class='fa fa-square fa-stack-2x'></i>\
+                                                    <i class='fa fa-trash-o fa-stack-1x fa-inverse'></i>\
+                                                </span>\
+                                            </a>`\
+                                        </td>")
+                    }
+                },
+                error: function(data) {}
+            })
+        })
+    </script>
+
+
+
+
     <div class="container bootstrap snippets bootdey">
         <div class="row">
             <div class="col-lg-12">
@@ -23,38 +70,13 @@ include('includes/fonctions.php');
                                     <tr>
                                         <th><span>Admin</span></th>
                                         <th><span>Nom</span></th>
-                                        <th class="text-center"><span>ID</span></th>
+                                        <th class='text-center'><span>ID</span></th>
                                         <th><span>Email</span></th>
                                         <th>&nbsp;</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-                                                <label class="form-check-label" for="flexSwitchCheckChecked"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
-                                            <h3 class="user-link">Full name 1</h3>
-                                            <span class="user-subhead">Member</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="label label-default">pending</span>
-                                        </td>
-                                        <td>
-                                            <a href="#">marlon@brando.com</a>
-                                        </td>
-                                        <td style="width: 20%;">
-                                            <a href="#" class="table-link danger">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                        </td>
+                                    <tr id="tableau">
                                     </tr>
                                 </tbody>
                             </table>
