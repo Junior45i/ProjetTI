@@ -26,7 +26,7 @@ include('includes/fonctions.php');
                                 for (var d of data) {
                                     if (admin == 1) {
                                         $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
-                                                <test type='button' class='btn-sm mb-2 btn btn-danger float-end' id=" + d.idPubli + " style='margin-top:30px'>Supprimer</test>'\
+                                                <test type='button' class='btn-sm mb-2 btn btn-danger float-end' id=" + d.idPubli + " style='margin-top:30px'>Supprimer</test>\
                                                 <div class = 'd-flex align-items-start profile-feed-item'>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png' alt = 'profile' class = 'img-sm rounded-circle'>\
                                                 <div class = 'ml-4' >\
