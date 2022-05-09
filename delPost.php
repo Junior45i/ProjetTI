@@ -30,10 +30,15 @@ function deleteMem($data)
         include('includes/fonctions.php');
         include('filters/admin_filter.php');
         $idOfMem = $data['myParams']['idMem'];
+        
+        $deleteComAut = $conn->prepare('DELETE from commentaire where id_question in (select idPubli from publication where idMem=:idMem');
+        $deleteComAut->bindParam(':idMem', $idOfMem, PDO::PARAM_STR, 50);
+        $deleteComAut->execute();
 
         $deleteCom = $conn->prepare('DELETE FROM commentaire WHERE id_auteur=:idMem');
         $deleteCom->bindParam(':idMem', $idOfMem, PDO::PARAM_STR, 50);
         $deleteCom->execute();
+
 
         $deletePub = $conn->prepare('DELETE FROM publication WHERE idMem=:idMem');
         $deletePub->bindParam(':idMem', $idOfMem, PDO::PARAM_STR, 50);
