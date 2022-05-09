@@ -70,7 +70,7 @@ include('includes/fonctions.php');
                         dataType: 'text',
                         success: function(result) {
                             $("#result").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
-                                                <strong>Le post a bien été supprimé</strong>\
+                                                <strong>Le membre a bien été supprimé</strong>\
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
                         },
@@ -89,6 +89,7 @@ include('includes/fonctions.php');
 
     <div class="container bootstrap snippets bootdey">
         <div class="row">
+            <div class="result"></div>
             <div class="col-lg-12">
                 <div class="main-box no-header clearfix">
                     <div class="main-box-body clearfix">

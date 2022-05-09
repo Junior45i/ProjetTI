@@ -42,9 +42,6 @@ function deleteMem($data)
         $deleteMem = $conn->prepare('DELETE FROM membre WHERE idMem=:idMem');
         $deleteMem->bindParam(':idMem', $idOfMem, PDO::PARAM_STR, 50);
         $deleteMem->execute();
-
-
-
         echo "success";
     } catch (PDOException $e) {
         echo "nope";
