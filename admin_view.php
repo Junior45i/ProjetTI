@@ -163,9 +163,6 @@ include('includes/fonctions.php');
                             <input type="search" name="search" id="search" class="form-control rounded" Placeholder="Recherche" aria-label="Search" aria-describedby="search-addon">
                         </div>
                     </div>
-                    <!-- <div class="col-4">
-                                                <button class="btn btn-success" id="search" type="submit">Rechercher</button>
-                                            </div> -->
                 </div>
             </form>
             <div class="col-lg-12">
