@@ -27,14 +27,14 @@ include('includes/fonctions.php');
                             if (d.administrateur == 1) {
                                 $("#tableau").append("<tr><td>\
                                             <div class='form-check form-switch'>\
-                                                <input class='form-check-input' type='checkbox' id='' Checked>\
+                                                <input class='form-check-input' type='checkbox' id='test' Checked>\
                                                 <label class='form-check-label' ></label>\
                                             </div>\
                                         </td>\
                                         <td>\
                                             <img src='https://bootdey.com/img/Content/user_1.jpg' alt=''>\
                                             <h3 class='user-link'>" + d.nomMem + " " + d.preMem + "</h3>\
-                                            <span class='user-subhead'>Member</span>\
+                                            <span class='user-subhead'>Admin</span>\
                                         </td>\
                                         <td class='text-center'>\
                                             <span class='label label-default'>" + d.idMem + "</span>\
@@ -71,14 +71,14 @@ include('includes/fonctions.php');
                                             <a>" + d.mail + "</a>\
                                         </td>\
                                         <td style='width: 20%;'>\
-                                            <button class='table-link danger'>\
+                                            <a class='table-link danger'>\
                                             <suppression class='table-link danger' id=" + d.idMem + ">\
                                                 <span class='fa-stack'>\
                                                     <i class='fa fa-square fa-stack-2x'></i>\
                                                     <i class='fa fa-trash-o fa-stack-1x fa-inverse'></i>\
                                                 </span>\
                                             </suppression>\
-                                            </button>\
+                                            </a>\
                                         </td></tr>")
                             }
                         }
