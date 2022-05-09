@@ -26,7 +26,7 @@ include('includes/fonctions.php');
                         for (var d of data) {
                             $("#tableau").append("<tr><td>\
                                             <div class='form-check form-switch'>\
-                                                <input class='form-check-input' type='checkbox' id='flexSwitchCheckChecked' checked>\
+                                                <input class='form-check-input' type='checkbox' id='flexSwitchCheckChecked'>\
                                                 <label class='form-check-label' for='flexSwitchCheckChecked'></label>\
                                             </div>\
                                         </td>\
