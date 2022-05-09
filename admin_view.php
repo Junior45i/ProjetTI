@@ -99,8 +99,8 @@ include('includes/fonctions.php');
                         data: {
                             myFunction: 'setAdmin',
                             myParams: {
-                                idMem: $(this).attr('id'),
-                                changeAdmin: util
+                                idMem: $(this).attr('id')
+                                // changeAdmin: util
                             }
                         },
                         async: false,
