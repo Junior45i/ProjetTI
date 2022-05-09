@@ -33,7 +33,7 @@ include('includes/fonctions.php');
                                                 <h5>" + d.title + "</h5> \
                                                 <p>" + d.content + "</p><p class = 'small text-muted mt-2 mb-0'>\
                                                 <span class = 'ml-2'>\
-                                                <a href = 'post_view.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " + d.nbCom + "</a>");
+                                                <a href = 'post_view.php?idPubli=" + d.idPubli + "class = 'bi bi-chat-square-dots'>" + "  " + d.nbCom + "</a>");
                                     if (admin == 1) {
                                         $("#feed").append("<test type='button' class='btn btn-danger' id=" + d.idPubli + ">Supprimer</test>")
                                     }
