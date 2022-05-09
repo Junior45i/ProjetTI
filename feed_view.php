@@ -23,6 +23,7 @@ include('includes/fonctions.php');
                             dataType: 'json',
                             success: function(data) {
                                 for (var d of data) {
+
                                     $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
                                                 <div class = 'd-flex align-items-start profile-feed-item'>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png' alt = 'profile' class = 'img-sm rounded-circle'>\
@@ -33,12 +34,15 @@ include('includes/fonctions.php');
                                                 <p>" + d.content + "</p><p class = 'small text-muted mt-2 mb-0'>\
                                                 <span class = 'ml-2'>\
                                                 <a href = 'post_view.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " + d.nbCom + "</a>\
-                                                </span > \
-                                                <button type='button' class='btn btn-danger'>Supprimer</button> \
+                                                </span >\
                                                 </p> \
                                                 </div> \
                                                 </div> \
                                                 <br></div></div>")
+                                    if ($_SESSION['administrateur'] == 1) {
+                                        $("#feed").append("<button type='button' class='btn btn-danger'>Supprimer</button>")
+                                    }
+
                                 }
                                 $("#search").on("keyup", function() {
                                     var value = $(this).val().toLowerCase();
