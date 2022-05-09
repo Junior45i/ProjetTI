@@ -87,7 +87,7 @@ include('includes/fonctions.php');
                     error: function(data) {}
                 }), $("#search").on("keyup", function() {
                     var value = $(this).val().toLowerCase();
-                    $("#tableau div").filter(function() {
+                    $("#tableau").filter(function() {
                         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                     });
                 }),
