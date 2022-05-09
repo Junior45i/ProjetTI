@@ -18,7 +18,7 @@ function tableauMem($data)
     }
 }
 
-function setAdmin(){
+function setAdmin($data){
     try {
         session_start();
         include('filters/auth_filter.php');

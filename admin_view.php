@@ -86,7 +86,7 @@ include('includes/fonctions.php');
                     error: function(data) {}
                 }),
                 $(document).on('click', 'input', function() {
-                    var idMem = $(this).attr('id');
+                    var idMembre = $(this).attr('id');
                     var util = 0;
                     if (this.checked) {
                         var util = 1;
@@ -100,7 +100,7 @@ include('includes/fonctions.php');
                         data: {
                             myFunction: 'setAdmin',
                             myParams: {
-                                idMem: $(this).attr('id'),
+                                idMem: idMembre,
                                 changeAdmin: util
                             }
                         },
