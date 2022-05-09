@@ -34,6 +34,7 @@ include('includes/fonctions.php');
                                                 <span class = 'ml-2'>\
                                                 <a href = 'post_view.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " + d.nbCom + "</a>\
                                                 </span > \
+                                                <button type='button' class='btn btn-danger'>Supprimer</button> \
                                                 </p> \
                                                 </div> \
                                                 </div> \
