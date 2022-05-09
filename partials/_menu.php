@@ -21,10 +21,10 @@
                             <a class="nav-link" href="profil">Mon Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="logout.php">Déconnexion</a>
+                            <a class="nav-link" href="admin_view.php">Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="logout.php">Admin</a>
+                            <a class="nav-link" href="logout.php">Déconnexion</a>
                         </li>
                     <?php elseif (is_logged_in()) : ?>
                         <li class="nav-item">
