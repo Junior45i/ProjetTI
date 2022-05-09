@@ -38,6 +38,7 @@ include('includes/fonctions.php');
                                                 </div> \
                                                 </div> \
                                                 <br></div></div>");
+                                                console.log(data);
                                     if (d.administrateur == 1) {
                                         $("#feed").append("<button type='button' class='btn btn-danger'>Supprimer</button>")
                                     }
