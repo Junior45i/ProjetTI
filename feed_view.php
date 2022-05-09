@@ -23,7 +23,6 @@ include('includes/fonctions.php');
                             dataType: 'json',
                             success: function(data) {
                                 for (var d of data) {
-
                                     $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
                                                 <div class = 'd-flex align-items-start profile-feed-item'>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png' alt = 'profile' class = 'img-sm rounded-circle'>\
@@ -38,7 +37,7 @@ include('includes/fonctions.php');
                                                 </p> \
                                                 </div> \
                                                 </div> \
-                                                <br></div></div>")
+                                                <br></div></div>");
                                     if (d.administrateur == 1) {
                                         $("#feed").append("<button type='button' class='btn btn-danger'>Supprimer</button>")
                                     }
