@@ -23,6 +23,7 @@ include('includes/fonctions.php');
                             dataType: 'json',
                             success: function(data) {
                                 for (var d of data) {
+                                    var admin = '<%= Session["administrateur"] %>'
                                     $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
                                                 <div class = 'd-flex align-items-start profile-feed-item'>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png' alt = 'profile' class = 'img-sm rounded-circle'>\
@@ -38,8 +39,8 @@ include('includes/fonctions.php');
                                                 </div> \
                                                 </div> \
                                                 <br></div></div>");
-                                                console.log(data);
-                                    if (d.administrateur == 1) {
+                                    console.log(data);
+                                    if (admin == 1) {
                                         $("#feed").append("<button type='button' class='btn btn-danger'>Supprimer</button>")
                                     }
 
