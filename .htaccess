@@ -18,4 +18,5 @@ RewriteRule ^mesPosts$ myPost_view.php
 RewriteRule ^profil$ profil_view.php
 RewriteRule ^post$ post_view.php
 RewriteRule ^publierUnPost$ pubPost_view.php
+RewriteRule ^admin$ admin_view.php
 # DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:19738471:
