@@ -14,31 +14,19 @@ include('includes/fonctions.php');
     <script>
         var admin = <?php echo $_SESSION['administrateur']; ?>;
         $(document).ready(function() {
-                    $(function() {
-                            $.ajax({
-                                    url: 'feed.php',
-                                    type: 'POST',
-                                    data: {
-                                        myFunction: 'rechercheGlobale'
-                                    },
-                                    dataType: 'json',
-                                    success: function(data) {
-                                        for (var d of data) {
-                                            if (admin == 1) {
-                                                $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
-                                                <div class = 'd-flex align-items-start profile-feed-item'>\
-                                                <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png' alt = 'profile' class = 'img-sm rounded-circle'>\
-                                                <div class = 'ml-4' >\
-                                                <div class = 'ml-4' >\
-                                                <h6> <boutton id= " + d.idMem + ">" + d.preMem + " " + d.nomMem + "<boutton/><small class = 'ml-4 text-muted'> <i class = 'bi bi-clock'> </i>" + d.datePubli + "</small></h6>\
-                                                <h5>" + d.title + "</h5> \
-                                                <p>" + d.content + "</p><p class = 'small text-muted mt-2 mb-0'>\
-                                                <span class = 'ml-2'>\
-                                                <a href = 'post_view.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " + d.nbCom + "</a>\
-                                                </span><br></div><test type='button' class='btn-sm mb-2 btn btn-danger float-end' id=" + d.idPubli + " style='margin-top:30px'>Supprimer</test></div>");
-                                                }
-                                                else
-                                                    $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
+            $(function() {
+                    $.ajax({
+                            url: 'feed.php',
+                            type: 'POST',
+                            data: {
+                                myFunction: 'rechercheGlobale'
+                            },
+                            dataType: 'json',
+                            success: function(data) {
+                                for (var d of data) {
+                                    if (admin == 1) {
+                                        $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
+                                                <test type='button' class='btn-sm mb-2 btn btn-danger float-end' id=" + d.idPubli + " style='margin-top:30px'>Supprimer</test>'\
                                                 <div class = 'd-flex align-items-start profile-feed-item'>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png' alt = 'profile' class = 'img-sm rounded-circle'>\
                                                 <div class = 'ml-4' >\
@@ -49,30 +37,42 @@ include('includes/fonctions.php');
                                                 <span class = 'ml-2'>\
                                                 <a href = 'post_view.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " + d.nbCom + "</a>\
                                                 </span><br></div></div>");
-                                            }
-                                            $("#search").on("keyup", function() {
-                                                var value = $(this).val().toLowerCase();
-                                                $("#feed div").filter(function() {
-                                                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                                                });
-                                            });
-                                        }
-                                    }),
-                                $.ajax({
-                                    url: 'feed.php',
-                                    type: 'POST',
-                                    data: {
-                                        myFunction: 'afficherProfil',
-                                    },
-                                    dataType: 'json',
-                                    success: function(data) {
-                                        for (var d of data) {
-                                            var ville = d.ville == null ? '' : d.ville;
-                                            var rue = d.rue == null ? '' : d.rue;
-                                            var bio = d.bio == null ? '' : d.bio;
-                                            var sexe = d.sexe == null ? '' : d.sexe;
-                                            var telephone = d.telephone == null ? '' : d.telephone;
-                                            $("#membre").append("<div class='border-bottom text-center pb-4 '>\
+                                    } else
+                                        $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
+                                                <div class = 'd-flex align-items-start profile-feed-item'>\
+                                                <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png' alt = 'profile' class = 'img-sm rounded-circle'>\
+                                                <div class = 'ml-4' >\
+                                                <div class = 'ml-4' >\
+                                                <h6> <boutton id= " + d.idMem + ">" + d.preMem + " " + d.nomMem + "<boutton/><small class = 'ml-4 text-muted'> <i class = 'bi bi-clock'> </i>" + d.datePubli + "</small></h6>\
+                                                <h5>" + d.title + "</h5> \
+                                                <p>" + d.content + "</p><p class = 'small text-muted mt-2 mb-0'>\
+                                                <span class = 'ml-2'>\
+                                                <a href = 'post_view.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " + d.nbCom + "</a>\
+                                                </span><br></div></div>");
+                                }
+                                $("#search").on("keyup", function() {
+                                    var value = $(this).val().toLowerCase();
+                                    $("#feed div").filter(function() {
+                                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                    });
+                                });
+                            }
+                        }),
+                        $.ajax({
+                            url: 'feed.php',
+                            type: 'POST',
+                            data: {
+                                myFunction: 'afficherProfil',
+                            },
+                            dataType: 'json',
+                            success: function(data) {
+                                for (var d of data) {
+                                    var ville = d.ville == null ? '' : d.ville;
+                                    var rue = d.rue == null ? '' : d.rue;
+                                    var bio = d.bio == null ? '' : d.bio;
+                                    var sexe = d.sexe == null ? '' : d.sexe;
+                                    var telephone = d.telephone == null ? '' : d.telephone;
+                                    $("#membre").append("<div class='border-bottom text-center pb-4 '>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png'\
                                                 alt = 'profile'\
                                                 class = 'mx-auto d-block img-lg rounded-circle mb-3' >\
@@ -128,63 +128,63 @@ include('includes/fonctions.php');
                                                 </span>\
                                                 </p>\
                                                 </div>")
-                                        }
-                                        $("#search").on("keyup", function() {
-                                            var value = $(this).val().toLowerCase();
-                                            $("#feed div").filter(function() {
-                                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                                            });
-                                        });
-                                    }
-                                })
-                            }),
-                        // Suppression en tant que admin
-                        $(document).on('click', 'test', function() {
-                            var idPublication = $(this).attr('id');
-                            $.ajax({
-                                url: 'delPost.php',
-                                type: 'POST',
-                                data: {
-                                    myFunction: 'delete',
-                                    myParams: {
-                                        idPublication: $(this).attr('id')
-                                    }
-                                },
-                                async: false,
-                                dataType: 'text',
-                                success: function(result) {
-                                    $("#result").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
+                                }
+                                $("#search").on("keyup", function() {
+                                    var value = $(this).val().toLowerCase();
+                                    $("#feed div").filter(function() {
+                                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                    });
+                                });
+                            }
+                        })
+                }),
+                // Suppression en tant que admin
+                $(document).on('click', 'test', function() {
+                    var idPublication = $(this).attr('id');
+                    $.ajax({
+                        url: 'delPost.php',
+                        type: 'POST',
+                        data: {
+                            myFunction: 'delete',
+                            myParams: {
+                                idPublication: $(this).attr('id')
+                            }
+                        },
+                        async: false,
+                        dataType: 'text',
+                        success: function(result) {
+                            $("#result").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
                                                 <strong>Le post a bien été supprimé</strong>\
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
-                                },
-                                error: function(result) {
-                                    $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+                        },
+                        error: function(result) {
+                            $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
                                                                         <strong> Un problème est survenu </strong>\
                                                                         <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
-                                }
-                            });
-                        }),
-                        $(document).on('click', 'boutton', function() {
-                            $.ajax({
-                                url: 'feed.php',
-                                type: 'POST',
-                                data: {
-                                    myFunction: 'rechercheUtilisateur',
-                                    myParams: {
-                                        idMem: $(this).attr('id')
-                                    }
-                                },
-                                async: false,
-                                dataType: 'json',
-                                success: function(data) {
-                                    for (var d of data) {
-                                        var ville = d.ville == null ? '' : d.ville;
-                                        var rue = d.rue == null ? '' : d.rue;
-                                        var bio = d.bio == null ? '' : d.bio;
-                                        var sexe = d.sexe == null ? '' : d.sexe;
-                                        var telephone = d.telephone == null ? '' : d.telephone;
-                                        $("#membre").html("<div class='border-bottom text-center pb-4 '>\
+                        }
+                    });
+                }),
+                $(document).on('click', 'boutton', function() {
+                    $.ajax({
+                        url: 'feed.php',
+                        type: 'POST',
+                        data: {
+                            myFunction: 'rechercheUtilisateur',
+                            myParams: {
+                                idMem: $(this).attr('id')
+                            }
+                        },
+                        async: false,
+                        dataType: 'json',
+                        success: function(data) {
+                            for (var d of data) {
+                                var ville = d.ville == null ? '' : d.ville;
+                                var rue = d.rue == null ? '' : d.rue;
+                                var bio = d.bio == null ? '' : d.bio;
+                                var sexe = d.sexe == null ? '' : d.sexe;
+                                var telephone = d.telephone == null ? '' : d.telephone;
+                                $("#membre").html("<div class='border-bottom text-center pb-4 '>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png'\
                                                 alt = 'profile'\
                                                 class = 'mx-auto d-block img-lg rounded-circle mb-3' >\
@@ -240,16 +240,16 @@ include('includes/fonctions.php');
                                                 </span>\
                                                 </p>\
                                                 </div>")
-                                    }
-                                },
-                                error: function(data) {
-                                    $("#membre").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+                            }
+                        },
+                        error: function(data) {
+                            $("#membre").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
                                                                     <strong>" + data + "</strong>\
                                                                     <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
-                                }
-                            });
-                        })
-                    })
+                        }
+                    });
+                })
+        })
     </script>
     <!-- Barre de recherche -->
     <div class="container">
