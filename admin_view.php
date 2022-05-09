@@ -43,14 +43,14 @@ include('includes/fonctions.php');
                                             <a>" + d.mail + "</a>\
                                         </td>\
                                         <td style='width: 20%;'>\
-                                            <button class='table-link danger'>\
+                                            <a class='table-link danger'>\
                                             <suppression class='table-link danger' id=" + d.idMem + ">\
                                                 <span class='fa-stack'>\
                                                     <i class='fa fa-square fa-stack-2x'></i>\
                                                     <i class='fa fa-trash-o fa-stack-1x fa-inverse'></i>\
                                                 </span>\
                                             </suppression>\
-                                            </button>\
+                                            </a>\
                                         </td></tr>")
                             } else {
                                 $("#tableau").append("<tr><td>\
@@ -86,32 +86,31 @@ include('includes/fonctions.php');
                     error: function(data) {}
                 }),
                 $(document).on('click', 'input', function() {
-                    var idCoche = $(this).attr('id');
+                    var idMem = $(this).attr('id');
                     if (this.checked) {
-                        alert("check" + idCoche);
+                        var util = 1;
                     } else {
-                        alert("PasCheck" + idCoche);
-                        // the checkbox is now no longer checked
+                        var util = 0;
                     }
+                    $.ajax({
+                        url: 'admin.php',
+                        type: 'POST',
+                        data: {
+                            myFunction: 'setAdmin',
+                            myParams: {
+                                idMem: $(this).attr('id'),
+                                setAdmin: util
+                            }
+                        },
+                        async: false,
+                        dataType: 'text',
+                        success: function(result) {
 
-                    // $.ajax({
-                    //     url: 'setAdmin.php',
-                    //     type: 'POST',
-                    //     data: {
-                    //         myFunction: 'deleteMem',
-                    //         myParams: {
-                    //             idMem: $(this).attr('id')
-                    //         }
-                    //     },
-                    //     async: false,
-                    //     dataType: 'text',
-                    //     success: function(result) {
+                        },
+                        error: function(result) {
 
-                    //     },
-                    //     error: function(result) {
-
-                    //     }
-                    // });
+                        }
+                    });
                 })
         })
     </script>

@@ -17,3 +17,17 @@ function tableauMem($data)
     } catch (PDOException $e) {
     }
 }
+
+function setAdmin($data){
+    try {
+        session_start();
+        include('filters/auth_filter.php');
+        require('includes/fonctions.php');
+        $setAdmin = $conn->prepare('UPDATE membre SET administrateur=:setAdmin WHERE idMem=:idMem');
+        $setAdmin->bindParam(':idMem', $idMem, PDO::PARAM_STR, 50);
+        $setAdmin->bindParam(':setAdmin', $setAdmin, PDO::PARAM_STR, 50);
+        $setAdmin->execute();
+        echo "success";
+    } catch (PDOException $e) {
+    }
+}
