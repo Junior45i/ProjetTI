@@ -25,7 +25,7 @@ include('includes/fonctions.php');
                             success: function(data) {
                                 for (var d of data) {
                                     if (admin == 1) {
-                                        $("#feed").append("<test type='button' class='btn btn-danger float-end' id=" + d.idPubli + " style='margin-top:30px'>Supprimer</test>")
+                                        $("#feed").append("<test type='button' class='btn-sm mb-2 btn btn-danger float-end' id=" + d.idPubli + " style='margin-top:30px'>Supprimer</test>")
                                     }
                                     $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
                                                 <div class = 'd-flex align-items-start profile-feed-item'>\
