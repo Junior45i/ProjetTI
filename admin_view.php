@@ -42,8 +42,7 @@ include('includes/fonctions.php');
                                             <a href='#'>" + d.mail + "</a>\
                                         </td>\
                                         <td style='width: 20%;'>\
-                                            <a href='#' class='table-link danger'>\
-                                            <suppression id=" + d.idMem + ">\
+                                            <suppression class='table-link danger' id=" + d.idMem + ">\
                                                 <span class='fa-stack'>\
                                                     <i class='fa fa-square fa-stack-2x'></i>\
                                                     <i class='fa fa-trash-o fa-stack-1x fa-inverse'></i>\
@@ -89,8 +88,8 @@ include('includes/fonctions.php');
 
 
     <div class="container bootstrap snippets bootdey">
-    <br>    
-    <div class="result" id="result"></div>
+        <br>
+        <div class="result" id="result"></div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-box no-header clearfix">
