@@ -24,7 +24,36 @@ include('includes/fonctions.php');
                     dataType: 'json',
                     success: function(data) {
                         for (var d of data) {
-                            $("#tableau").append("<tr><td>\
+                            if (d.administrateur == 1) {
+                                $("#tableau").append("<tr><td>\
+                                            <div class='form-check form-switch'>\
+                                                <input class='form-check-input' type='checkbox' id='flexSwitchCheckChecked' Checked>\
+                                                <label class='form-check-label' for='flexSwitchCheckChecked'></label>\
+                                            </div>\
+                                        </td>\
+                                        <td>\
+                                            <img src='https://bootdey.com/img/Content/user_1.jpg' alt=''>\
+                                            <h3 class='user-link'>" + d.nomMem + " " + d.preMem + "</h3>\
+                                            <span class='user-subhead'>Member</span>\
+                                        </td>\
+                                        <td class='text-center'>\
+                                            <span class='label label-default'>" + d.idMem + "</span>\
+                                        </td>\
+                                        <td>\
+                                            <a>" + d.mail + "</a>\
+                                        </td>\
+                                        <td style='width: 20%;'>\
+                                            <button class='table-link danger'>\
+                                            <suppression class='table-link danger' id=" + d.idMem + ">\
+                                                <span class='fa-stack'>\
+                                                    <i class='fa fa-square fa-stack-2x'></i>\
+                                                    <i class='fa fa-trash-o fa-stack-1x fa-inverse'></i>\
+                                                </span>\
+                                            </suppression>\
+                                            </button>\
+                                        </td></tr>")
+                            } else {
+                                $("#tableau").append("<tr><td>\
                                             <div class='form-check form-switch'>\
                                                 <input class='form-check-input' type='checkbox' id='flexSwitchCheckChecked'>\
                                                 <label class='form-check-label' for='flexSwitchCheckChecked'></label>\
@@ -42,15 +71,16 @@ include('includes/fonctions.php');
                                             <a>" + d.mail + "</a>\
                                         </td>\
                                         <td style='width: 20%;'>\
-                                            <a class='table-link danger'>\
+                                            <button class='table-link danger'>\
                                             <suppression class='table-link danger' id=" + d.idMem + ">\
                                                 <span class='fa-stack'>\
                                                     <i class='fa fa-square fa-stack-2x'></i>\
                                                     <i class='fa fa-trash-o fa-stack-1x fa-inverse'></i>\
                                                 </span>\
                                             </suppression>\
-                                            </a>\
+                                            </button>\
                                         </td></tr>")
+                            }
                         }
                     },
                     error: function(data) {}
