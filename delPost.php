@@ -21,3 +21,32 @@ function delete($data)
         echo "nope";
     }
 }
+
+function deleteMem($data)
+{
+    try {
+        session_start();
+        include('filters/auth_filter.php');
+        include('includes/fonctions.php');
+        $idOfMem = $data['myParams']['idMem'];
+
+        $deleteCom = $conn->prepare('DELETE FROM commentaire WHERE id_auteur=:idMem');
+        $deleteCom->bindParam(':idMem', $idOfMem, PDO::PARAM_STR, 50);
+        $deleteCom->execute();
+
+        $deletePub = $conn->prepare('DELETE FROM publication WHERE idMem=:idMem');
+        $deletePub->bindParam(':idMem', $idOfMem, PDO::PARAM_STR, 50);
+        $deletePub->execute();
+
+
+        $deleteMem = $conn->prepare('DELETE FROM membre WHERE idMem=:idMem');
+        $deleteMem->bindParam(':idMem', $idOfMem, PDO::PARAM_STR, 50);
+        $deleteMem->execute();
+
+
+
+        echo "success";
+    } catch (PDOException $e) {
+        echo "nope";
+    }
+}

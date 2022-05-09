@@ -16,15 +16,15 @@ include('includes/fonctions.php');
         // Récupère le post
         $(document).ready(function() {
             $.ajax({
-                url: 'admin.php',
-                type: 'POST',
-                data: {
-                    myFunction: 'tableauMem'
-                },
-                dataType: 'json',
-                success: function(data) {
-                    for (var d of data) {
-                        $("#tableau").append("<tr><td>\
+                    url: 'admin.php',
+                    type: 'POST',
+                    data: {
+                        myFunction: 'tableauMem'
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        for (var d of data) {
+                            $("#tableau").append("<tr><td>\
                                             <div class='form-check form-switch'>\
                                                 <input class='form-check-input' type='checkbox' id='flexSwitchCheckChecked' checked>\
                                                 <label class='form-check-label' for='flexSwitchCheckChecked'></label>\
@@ -36,14 +36,14 @@ include('includes/fonctions.php');
                                             <span class='user-subhead'>Member</span>\
                                         </td>\
                                         <td class='text-center'>\
-                                            <span class='label label-default'>"+d.idMem+"</span>\
+                                            <span class='label label-default'>" + d.idMem + "</span>\
                                         </td>\
                                         <td>\
-                                            <a href='#'>"+d.mail+"</a>\
+                                            <a href='#'>" + d.mail + "</a>\
                                         </td>\
                                         <td style='width: 20%;'>\
                                             <a href='#' class='table-link danger'>\
-                                            <suppression id="+d.idMem+">\
+                                            <suppression id=" + d.idMem + ">\
                                                 <span class='fa-stack'>\
                                                     <i class='fa fa-square fa-stack-2x'></i>\
                                                     <i class='fa fa-trash-o fa-stack-1x fa-inverse'></i>\
@@ -51,10 +51,36 @@ include('includes/fonctions.php');
                                             </suppression>\
                                             </a>\
                                         </td></tr>")
-                    }
-                },
-                error: function(data) {}
-            })
+                        }
+                    },
+                    error: function(data) {}
+                }),
+                $(document).on('click', 'suppression', function() {
+                    var idMem = $(this).attr('id');
+                    $.ajax({
+                        url: 'delPost.php',
+                        type: 'POST',
+                        data: {
+                            myFunction: 'deleteMem',
+                            myParams: {
+                                idMem: $(this).attr('id')
+                            }
+                        },
+                        async: false,
+                        dataType: 'text',
+                        success: function(result) {
+                            $("#result").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
+                                                <strong>Le post a bien été supprimé</strong>\
+                                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
+                                                </div>");
+                        },
+                        error: function(result) {
+                            $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+                                                                        <strong> Un problème est survenu </strong>\
+                                                                        <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
+                        }
+                    });
+                })
         })
     </script>
 
