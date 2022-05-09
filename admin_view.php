@@ -87,6 +87,7 @@ include('includes/fonctions.php');
                 }),
                 $(document).on('click', 'input', function() {
                     var idMem = $(this).attr('id');
+                    var util = 0;
                     if (this.checked) {
                         var util = 1;
                     } else {
@@ -105,7 +106,7 @@ include('includes/fonctions.php');
                         async: false,
                         dataType: 'text',
                         success: function(result) {
-
+                            console.log(result[0])
                         },
                         error: function(result) {
 

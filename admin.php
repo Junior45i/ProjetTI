@@ -27,7 +27,8 @@ function setAdmin($data){
         $setAdmin->bindParam(':idMem', $idMem, PDO::PARAM_STR, 50);
         $setAdmin->bindParam(':setAdmin', $setAdmin, PDO::PARAM_STR, 50);
         $setAdmin->execute();
-        echo "success";
+        $rs = $setAdmin->fetchAll(PDO::FETCH_ASSOC);
+        echo ($idMem." ".$setAdmin);
     } catch (PDOException $e) {
     }
 }
