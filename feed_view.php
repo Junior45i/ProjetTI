@@ -12,6 +12,7 @@ include('includes/fonctions.php');
 <body>
     <?php include('partials/_header.php'); ?>
     <script>
+        var admin = $_SESSION['administrateur'];
         $(document).ready(function() {
             $(function() {
                     $.ajax({
@@ -23,7 +24,6 @@ include('includes/fonctions.php');
                             dataType: 'json',
                             success: function(data) {
                                 for (var d of data) {
-                                    var admin = '<%= Session["administrateur"] %>'
                                     $("#feed").append("<div class = 'profile-feed' id='profile-feed'>\
                                                 <div class = 'd-flex align-items-start profile-feed-item'>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png' alt = 'profile' class = 'img-sm rounded-circle'>\
