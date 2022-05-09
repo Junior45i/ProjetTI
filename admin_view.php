@@ -90,10 +90,12 @@ include('includes/fonctions.php');
                     var util = 0;
                     if (this.checked) {
                         var util = 1;
+                        alert("IDmem " + idMem + " util " + util);
                     } else {
                         var util = 0;
+                        alert("IDmem " + idMem + " util " + util);
                     }
-                    alert("IDmem "+ idMem + " util " + util);
+                    alert("IDmem " + idMem + " util " + util);
                     $.ajax({
                         url: 'admin.php',
                         type: 'POST',
