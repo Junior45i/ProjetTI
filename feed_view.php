@@ -33,11 +33,12 @@ include('includes/fonctions.php');
                                                 <h5>" + d.title + "</h5> \
                                                 <p>" + d.content + "</p><p class = 'small text-muted mt-2 mb-0'>\
                                                 <span class = 'ml-2'>\
-                                                <a href = 'post_view.php?idPubli=" + d.idPubli + "class = 'bi bi-chat-square-dots'>" + "  " + d.nbCom + "</a>");
+                                                <a href = 'post_view.php?idPubli=" + d.idPubli + "'class = 'bi bi-chat-square-dots'>" + "  " + d.nbCom + "</a>\
+                                                </span>");
                                     if (admin == 1) {
                                         $("#feed").append("<test type='button' class='btn btn-danger' id=" + d.idPubli + ">Supprimer</test>")
                                     }
-                                    $("#feed").append("</span></p></div></div><br></div></div>")
+                                    $("#feed").append("</p></div></div><br></div></div>")
                                 }
                                 $("#search").on("keyup", function() {
                                     var value = $(this).val().toLowerCase();
