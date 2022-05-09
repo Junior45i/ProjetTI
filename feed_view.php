@@ -41,7 +41,7 @@ include('includes/fonctions.php');
                                                 <br></div></div>");
                                     console.log(data);
                                     if (admin == 1) {
-                                        $("#feed").append("<button type='button' class='btn btn-danger' id=" + idPubli + ">Supprimer</button>")
+                                        $("#feed").append("<test type='button' class='btn btn-danger' id=" + idPubli + ">Supprimer</test>")
                                     }
 
                                 }
@@ -51,36 +51,6 @@ include('includes/fonctions.php');
                                         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                                     });
                                 });
-
-                                // Suppression en tant que admin
-                                $(document).on('click', 'boutton', function() {
-                                    var idPublication = $(this).attr('id');
-                                    $.ajax({
-                                        url: 'delPost.php',
-                                        type: 'POST',
-                                        data: {
-                                            myFunction: 'delete',
-                                            myParams: {
-                                                idPublication: $(this).attr('id')
-                                            }
-                                        },
-                                        async: false,
-                                        dataType: 'text',
-                                        success: function(result) {
-                                            $("#result").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
-                                                <strong>Le post a bien été supprimé</strong>\
-                                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
-                                                </div>");
-                                            //Suppression en visuel par suppression des parents
-                                            $('#' + idPublicationGlobal).parent().parent().remove();
-                                        },
-                                        error: function(result) {
-                                            $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
-                                                                        <strong> Un problème est survenu </strong>\
-                                                                        <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
-                                        }
-                                    });
-                                })
                             }
                         }),
                         $.ajax({
@@ -163,26 +133,55 @@ include('includes/fonctions.php');
                             }
                         })
                 }),
-                $(document).on('click', 'boutton', function() {
+                // Suppression en tant que admin
+                $(document).on('click', 'test', function() {
+                    var idPublication = $(this).attr('id');
                     $.ajax({
-                        url: 'feed.php',
+                        url: 'delPost.php',
                         type: 'POST',
                         data: {
-                            myFunction: 'rechercheUtilisateur',
+                            myFunction: 'delete',
                             myParams: {
-                                idMem: $(this).attr('id')
+                                idPublication: $(this).attr('id')
                             }
                         },
                         async: false,
-                        dataType: 'json',
-                        success: function(data) {
-                            for (var d of data) {
-                                var ville = d.ville == null ? '' : d.ville;
-                                var rue = d.rue == null ? '' : d.rue;
-                                var bio = d.bio == null ? '' : d.bio;
-                                var sexe = d.sexe == null ? '' : d.sexe;
-                                var telephone = d.telephone == null ? '' : d.telephone;
-                                $("#membre").html("<div class='border-bottom text-center pb-4 '>\
+                        dataType: 'text',
+                        success: function(result) {
+                            $("#result").html("<div class='alert alert-success alert-dismissible fade show' role='alert'>\
+                                                <strong>Le post a bien été supprimé</strong>\
+                                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
+                                                </div>");
+                            //Suppression en visuel par suppression des parents
+                            $('#' + idPublicationGlobal).parent().parent().remove();
+                        },
+                        error: function(result) {
+                            $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+                                                                        <strong> Un problème est survenu </strong>\
+                                                                        <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
+                        }
+                    });
+                }),
+            $(document).on('click', 'boutton', function() {
+                $.ajax({
+                    url: 'feed.php',
+                    type: 'POST',
+                    data: {
+                        myFunction: 'rechercheUtilisateur',
+                        myParams: {
+                            idMem: $(this).attr('id')
+                        }
+                    },
+                    async: false,
+                    dataType: 'json',
+                    success: function(data) {
+                        for (var d of data) {
+                            var ville = d.ville == null ? '' : d.ville;
+                            var rue = d.rue == null ? '' : d.rue;
+                            var bio = d.bio == null ? '' : d.bio;
+                            var sexe = d.sexe == null ? '' : d.sexe;
+                            var telephone = d.telephone == null ? '' : d.telephone;
+                            $("#membre").html("<div class='border-bottom text-center pb-4 '>\
                                                 <img src = 'https://bootdey.com/img/Content/avatar/avatar7.png'\
                                                 alt = 'profile'\
                                                 class = 'mx-auto d-block img-lg rounded-circle mb-3' >\
@@ -238,15 +237,15 @@ include('includes/fonctions.php');
                                                 </span>\
                                                 </p>\
                                                 </div>")
-                            }
-                        },
-                        error: function(data) {
-                            $("#membre").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
+                        }
+                    },
+                    error: function(data) {
+                        $("#membre").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
                                                                     <strong>" + data + "</strong>\
                                                                     <button type = 'button' class = 'btn-close' data-bs-dismiss = 'alert' aria-label = 'Close'></button><br/>")
-                        }
-                    });
-                })
+                    }
+                });
+            })
         })
     </script>
     <!-- Barre de recherche -->
