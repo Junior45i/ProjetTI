@@ -21,8 +21,8 @@ include('includes/fonctions.php');
                             <table class="table user-list">
                                 <thead>
                                     <tr>
-                                        <th><span>Nom</span></th>
                                         <th><span>Admin</span></th>
+                                        <th><span>Nom</span></th>
                                         <th class="text-center"><span>ID</span></th>
                                         <th><span>Email</span></th>
                                         <th>&nbsp;</th>
@@ -31,11 +31,16 @@ include('includes/fonctions.php');
                                 <tbody>
                                     <tr>
                                         <td>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                                                <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+                                            </div>
+                                        </td>
+                                        <td>
                                             <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
                                             <a href="#" class="user-link">Full name 1</a>
                                             <span class="user-subhead">Member</span>
                                         </td>
-                                        <td>2013/08/12</td>
                                         <td class="text-center">
                                             <span class="label label-default">pending</span>
                                         </td>
