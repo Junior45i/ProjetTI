@@ -28,6 +28,7 @@ function deleteMem($data)
         session_start();
         include('filters/auth_filter.php');
         include('includes/fonctions.php');
+        include('filters/admin_filter.php');
         $idOfMem = $data['myParams']['idMem'];
 
         $deleteCom = $conn->prepare('DELETE FROM commentaire WHERE id_auteur=:idMem');

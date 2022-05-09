@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('filters/auth_filter.php');
+include('filters/admin_filter.php');
 include('includes/fonctions.php');
 ?>
 <!-- Affichage du feed -->

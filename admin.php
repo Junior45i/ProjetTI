@@ -10,6 +10,7 @@ function tableauMem($data)
         session_start();
         include('filters/auth_filter.php');
         require('includes/fonctions.php');
+        include('filters/admin_filter.php');
         $getInfoMembers = $conn->prepare('SELECT * FROM membre');
         $getInfoMembers->execute();
         $rs = $getInfoMembers->fetchAll(PDO::FETCH_ASSOC);
@@ -22,6 +23,7 @@ function setAdmin($data){
     try {
         session_start();
         include('filters/auth_filter.php');
+        include('filters/admin_filter.php');
         require('includes/fonctions.php');
         $idMem = $data['myParams']['idMem'];
         $administrateur = $data['myParams']['changeAdmin'];
