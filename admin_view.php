@@ -93,6 +93,7 @@ include('includes/fonctions.php');
                     } else {
                         var util = 0;
                     }
+                    alert("IDmem "+ idMem + " util " + util);
                     $.ajax({
                         url: 'admin.php',
                         type: 'POST',
