@@ -85,6 +85,11 @@ include('includes/fonctions.php');
                         }
                     },
                     error: function(data) {}
+                }), $("#search").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#feed div").filter(function() {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
                 }),
                 $(document).on('click', 'input', function() {
                     var idMembre = $(this).attr('id');
@@ -106,10 +111,8 @@ include('includes/fonctions.php');
                         },
                         async: false,
                         // dataType: 'text',
-                        success: function(result) {
-                        },
-                        error: function(result) {
-                        }
+                        success: function(result) {},
+                        error: function(result) {}
                     });
                 }),
                 $(document).on('click', 'suppression', function() {
@@ -148,6 +151,23 @@ include('includes/fonctions.php');
         <br>
         <div class="result" id="result"></div>
         <div class="row">
+            <form>
+                <div class="form-group row">
+                    <div class="col-6">
+                        <div class="input-group rounded">
+                            <span class="input-group-text border-0" id="search-addon">
+                                <i class="fas fa-search"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                    </svg></i>
+                            </span>
+                            <input type="search" name="search" id="search" class="form-control rounded" Placeholder="Recherche" aria-label="Search" aria-describedby="search-addon">
+                        </div>
+                    </div>
+                    <!-- <div class="col-4">
+                                                <button class="btn btn-success" id="search" type="submit">Rechercher</button>
+                                            </div> -->
+                </div>
+            </form>
             <div class="col-lg-12">
                 <div class="main-box no-header clearfix">
                     <div class="main-box-body clearfix">
