@@ -90,10 +90,8 @@ include('includes/fonctions.php');
                     var util = 0;
                     if (this.checked) {
                         var util = 1;
-                        alert("IDmem " + idMem + " util " + util);
                     } else {
                         var util = 0;
-                        alert("IDmem " + idMem + " util " + util);
                     }
                     alert("IDmem " + idMem + " util " + util);
                     $.ajax({
@@ -102,12 +100,12 @@ include('includes/fonctions.php');
                         data: {
                             myFunction: 'setAdmin',
                             myParams: {
-                                idMem: $(this).attr('id')
+                                idMem: idMem
                                 // changeAdmin: util
                             }
                         },
                         async: false,
-                        dataType: 'text',
+                        // dataType: 'text',
                         success: function(result) {
                             for (var d of result) {
                                 console.log(d.result)

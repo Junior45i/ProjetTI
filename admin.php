@@ -18,7 +18,7 @@ function tableauMem($data)
     }
 }
 
-function setAdmin($data){
+function setAdmin(){
     try {
         session_start();
         include('filters/auth_filter.php');
@@ -27,7 +27,6 @@ function setAdmin($data){
         // $setAdmin->bindParam(':changeAdmin', $changeAdmin, PDO::PARAM_STR, 50);
         $setAdmin->bindParam(':idMem', $idMem, PDO::PARAM_STR, 50);
         $setAdmin->execute();
-        $rs = $setAdmin->fetchAll(PDO::FETCH_ASSOC);
         echo $idMem;
     } catch (PDOException $e) {
     }
