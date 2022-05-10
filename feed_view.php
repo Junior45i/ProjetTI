@@ -77,7 +77,7 @@ include('includes/fonctions.php');
                                                 alt = 'profile'\
                                                 class = 'mx-auto d-block img-lg rounded-circle mb-3' >\
                                                 <div class = ' mb-3 text-center'>\
-                                                <h3>" + d.nomMem == "Med" ? "oui":"non" + " " + d.preMem + " </h3>\
+                                                <h3>" + d.nomMem + " " + d.preMem + " </h3>\
                                                 <div class = 'd-flex align-items-center justify-content-center' >\
                                                 <h5 class = 'mb-0 mr-2 text-muted' >" + ville + "</h5>\
                                                 </div>\
