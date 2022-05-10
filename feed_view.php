@@ -157,7 +157,7 @@ include('includes/fonctions.php');
                                                 <strong>Le post a bien été supprimé</strong>\
                                                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                                                 </div>");
-                            $('#' + idPublication).parent().remove();
+                            $('#' + idPublication).remove();
                         },
                         error: function(result) {
                             $("#result").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'> \
